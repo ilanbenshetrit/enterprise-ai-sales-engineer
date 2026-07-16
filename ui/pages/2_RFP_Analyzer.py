@@ -7,33 +7,31 @@ RFP Analyzer UI
 import streamlit as st
 
 
+from components.layout import (
+    setup_page,
+    page_header
+)
+
+
 from services.rfp_service import RFPService
 
 
 
-st.set_page_config(
-    page_title="RFP Analyzer",
-    page_icon="📄",
-    layout="wide"
+setup_page(
+    "RFP Analyzer",
+    "📄"
+)
+
+
+
+page_header(
+    "📄 RFP Analyzer",
+    "Analyze customer requirements, risks and solution direction"
 )
 
 
 
 rfp_service = RFPService()
-
-
-
-st.title(
-    "📄 RFP Analyzer"
-)
-
-
-st.caption(
-    "Analyze customer requirements, risks and solution direction"
-)
-
-
-st.divider()
 
 
 
@@ -71,6 +69,7 @@ if uploaded_file:
     )
 
 
+
     st.divider()
 
 
@@ -98,11 +97,10 @@ if uploaded_file:
                 )
 
 
+
                 st.divider()
 
 
-
-                # Requirements
 
                 st.subheader(
                     "📌 Customer Requirements"
@@ -124,8 +122,6 @@ if uploaded_file:
 
 
 
-                # Discovery Questions
-
                 st.subheader(
                     "❓ Discovery Questions"
                 )
@@ -145,8 +141,6 @@ if uploaded_file:
                 st.divider()
 
 
-
-                # Risks
 
                 st.subheader(
                     "⚠️ Identified Risks"
@@ -178,8 +172,6 @@ if uploaded_file:
                 st.divider()
 
 
-
-                # Solution Direction
 
                 st.subheader(
                     "🏗 Recommended Solution Direction"
