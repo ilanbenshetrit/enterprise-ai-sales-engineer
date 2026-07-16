@@ -1,10 +1,7 @@
-import os
-
-from dotenv import load_dotenv
 from openai import OpenAI
 
+from app.config.settings import settings
 
-load_dotenv()
 
 
 class OpenAIProvider:
@@ -12,25 +9,26 @@ class OpenAIProvider:
 
     def __init__(self):
 
-        self.client = OpenAI(
-            api_key=os.getenv(
-                "OPENAI_API_KEY"
-            )
-        )
+        self.client = OpenAI()
 
 
 
     def ask(self, prompt):
 
         response = self.client.chat.completions.create(
-            model="gpt-4.1-mini",
+
+            model=settings.llm_model,
+
             messages=[
                 {
                     "role": "user",
                     "content": prompt
                 }
             ],
-            max_tokens=1000
+
+            temperature=settings.temperature,
+
+            max_tokens=settings.max_tokens
         )
 
 
