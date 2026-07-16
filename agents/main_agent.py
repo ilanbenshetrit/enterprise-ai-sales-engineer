@@ -1,6 +1,6 @@
 from app.llm.claude_client import ClaudeClient
 from app.prompts_loader import load_sales_engineer_prompt
-from app.memory_manager import MemoryManager
+from app.memory.manager import MemoryManager
 from tools.tool_registry import ToolRegistry
 from app.task_router import TaskRouter
 
