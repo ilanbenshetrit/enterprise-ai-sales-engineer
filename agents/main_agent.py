@@ -4,11 +4,13 @@ from app.memory.manager import MemoryManager
 from tools.tool_registry import ToolRegistry
 from app.task_router import TaskRouter
 
-from core.knowledge_manager import KnowledgeManager
+from app.services.knowledge_service import KnowledgeService
 from core.prompt_builder import PromptBuilder
 
 
+
 class EnterpriseAgent:
+
 
     def __init__(self, name):
 
@@ -24,7 +26,7 @@ class EnterpriseAgent:
 
         self.router = TaskRouter()
 
-        self.knowledge = KnowledgeManager()
+        self.knowledge = KnowledgeService()
 
         self.prompt_builder = PromptBuilder()
 
@@ -36,6 +38,7 @@ class EnterpriseAgent:
 
 
         # Save task to memory
+
         self.memory.save(
             "last_task",
             task
@@ -43,18 +46,22 @@ class EnterpriseAgent:
 
 
         # Retrieve relevant knowledge
+
         knowledge_result = self.knowledge.search(
             task
         )
 
 
         print("\nKnowledge Result:")
+
         print(knowledge_result)
 
 
 
         # Decide if a tool is required
+
         tool_result = None
+
 
         tool_name = self.router.decide(
             task
@@ -63,23 +70,28 @@ class EnterpriseAgent:
 
         if tool_name:
 
+
             tool_result = self.use_tool(
                 tool_name,
                 task
             )
 
+
             print("\nTool Result:")
+
             print(tool_result)
 
 
 
         # Build prompt
+
         full_prompt = self.prompt_builder.build(
             system_prompt=self.system_prompt,
             task=task,
             knowledge=knowledge_result,
             tools=tool_result
         )
+
 
 
         response = self.llm.ask(
@@ -97,6 +109,7 @@ class EnterpriseAgent:
         data
     ):
 
+
         tool = self.tools.get_tool(
             tool_name
         )
@@ -110,6 +123,7 @@ class EnterpriseAgent:
 
 
         return None
+
 
 
 
@@ -134,6 +148,7 @@ Customer requirements:
 - Security and compliance support
 
 Find:
+
 1. Requirements
 2. Technical questions
 3. Risks
@@ -142,5 +157,6 @@ Find:
     )
 
 
-    print("\nAI Response:")
+    print("\nFinal Answer:")
+
     print(result)
