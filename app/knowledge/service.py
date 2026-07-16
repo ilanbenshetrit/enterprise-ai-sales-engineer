@@ -1,8 +1,10 @@
 from app.knowledge.loader import KnowledgeLoader
 from app.knowledge.chunker import KnowledgeChunker
 from app.knowledge.retriever import KnowledgeRetriever
-from app.knowledge.embeddings import SimpleEmbeddingProvider
 from app.knowledge.vector_store import VectorStore
+
+from app.embeddings.embedding_service import EmbeddingService
+from app.embeddings.providers.mock_embedding_provider import MockEmbeddingProvider
 
 
 
@@ -17,7 +19,9 @@ class KnowledgeService:
 
         self.retriever = KnowledgeRetriever()
 
-        self.embedding_provider = SimpleEmbeddingProvider()
+        self.embedding_service = EmbeddingService(
+            MockEmbeddingProvider()
+        )
 
         self.vector_store = VectorStore()
 
@@ -35,9 +39,12 @@ class KnowledgeService:
 
         for chunk in chunks:
 
-            chunk["embedding"] = self.embedding_provider.embed(
-                chunk["content"]
-            )
+            chunk["embedding"] = {
+                "text": chunk["content"],
+                "vector": self.embedding_service.create_embedding(
+                    chunk["content"]
+                )
+            }
 
 
         self.vector_store.add_many(
