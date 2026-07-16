@@ -2,6 +2,7 @@ from app.knowledge.loader import KnowledgeLoader
 from app.knowledge.chunker import KnowledgeChunker
 from app.knowledge.retriever import KnowledgeRetriever
 from app.knowledge.embeddings import SimpleEmbeddingProvider
+from app.knowledge.vector_store import VectorStore
 
 
 
@@ -17,6 +18,8 @@ class KnowledgeService:
         self.retriever = KnowledgeRetriever()
 
         self.embedding_provider = SimpleEmbeddingProvider()
+
+        self.vector_store = VectorStore()
 
 
 
@@ -37,7 +40,12 @@ class KnowledgeService:
             )
 
 
-        return chunks
+        self.vector_store.add_many(
+            chunks
+        )
+
+
+        return self.vector_store.all()
 
 
 
