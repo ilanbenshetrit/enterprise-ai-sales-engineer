@@ -7,26 +7,24 @@ Settings UI
 import streamlit as st
 
 
-
-st.set_page_config(
-    page_title="Settings",
-    page_icon="⚙️",
-    layout="wide"
+from components.layout import (
+    setup_page,
+    page_header
 )
 
 
 
-st.title(
-    "⚙️ Settings"
+setup_page(
+    "Settings",
+    "⚙️"
 )
 
 
-st.caption(
+
+page_header(
+    "⚙️ Settings",
     "Configure Enterprise Sales Engineer Agent environment"
 )
-
-
-st.divider()
 
 
 
