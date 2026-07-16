@@ -19,13 +19,9 @@ st.set_page_config(
 
 
 
-# Initialize service
-
 rfp_service = RFPService()
 
 
-
-# Page Header
 
 st.title(
     "📄 RFP Analyzer"
@@ -40,8 +36,6 @@ st.caption(
 st.divider()
 
 
-
-# Upload Section
 
 st.subheader(
     "Upload Customer RFP"
@@ -107,14 +101,100 @@ if uploaded_file:
                 st.divider()
 
 
+
+                # Requirements
+
                 st.subheader(
-                    "📌 Analysis Result"
+                    "📌 Customer Requirements"
                 )
 
 
-                st.json(
-                    result
+                for item in result.get(
+                    "requirements",
+                    []
+                ):
+
+                    st.write(
+                        f"✅ {item}"
+                    )
+
+
+
+                st.divider()
+
+
+
+                # Discovery Questions
+
+                st.subheader(
+                    "❓ Discovery Questions"
                 )
+
+
+                for question in result.get(
+                    "technical_questions",
+                    []
+                ):
+
+                    st.write(
+                        f"• {question}"
+                    )
+
+
+
+                st.divider()
+
+
+
+                # Risks
+
+                st.subheader(
+                    "⚠️ Identified Risks"
+                )
+
+
+                risks = result.get(
+                    "risks",
+                    []
+                )
+
+
+                if risks:
+
+                    for risk in risks:
+
+                        st.warning(
+                            risk
+                        )
+
+                else:
+
+                    st.info(
+                        "No risks identified"
+                    )
+
+
+
+                st.divider()
+
+
+
+                # Solution Direction
+
+                st.subheader(
+                    "🏗 Recommended Solution Direction"
+                )
+
+
+                for solution in result.get(
+                    "solution_direction",
+                    []
+                ):
+
+                    st.success(
+                        solution
+                    )
+
 
 
             except Exception as e:
