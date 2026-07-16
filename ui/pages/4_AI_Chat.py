@@ -7,12 +7,19 @@ AI Chat UI
 import streamlit as st
 
 
+from services.agent_service import AgentService
+
+
 
 st.set_page_config(
     page_title="AI Chat",
     page_icon="🤖",
     layout="wide"
 )
+
+
+
+agent_service = AgentService()
 
 
 
@@ -30,15 +37,11 @@ st.divider()
 
 
 
-# Initialize chat history
-
 if "messages" not in st.session_state:
 
     st.session_state.messages = []
 
 
-
-# Display previous messages
 
 for message in st.session_state.messages:
 
@@ -51,8 +54,6 @@ for message in st.session_state.messages:
         )
 
 
-
-# User input
 
 prompt = st.chat_input(
     "Ask the Sales Engineer Agent..."
@@ -81,12 +82,33 @@ if prompt:
 
 
 
-    # Temporary response
+    with st.chat_message(
+        "assistant"
+    ):
 
-    response = (
-        "Agent connection will be integrated here. "
-        "The Enterprise Sales Engineer Agent will answer using knowledge and RFP context."
-    )
+
+        with st.spinner(
+            "Agent is thinking..."
+        ):
+
+
+            try:
+
+                response = agent_service.ask(
+                    prompt
+                )
+
+
+            except Exception as e:
+
+                response = (
+                    f"Agent error: {e}"
+                )
+
+
+            st.write(
+                response
+            )
 
 
 
@@ -96,12 +118,3 @@ if prompt:
             "content": response
         }
     )
-
-
-    with st.chat_message(
-        "assistant"
-    ):
-
-        st.write(
-            response
-        )
