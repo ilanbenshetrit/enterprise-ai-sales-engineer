@@ -7,26 +7,24 @@ Analysis History UI
 import streamlit as st
 
 
-
-st.set_page_config(
-    page_title="Analysis History",
-    page_icon="📊",
-    layout="wide"
+from components.layout import (
+    setup_page,
+    page_header
 )
 
 
 
-st.title(
-    "📊 Analysis History"
+setup_page(
+    "Analysis History",
+    "📊"
 )
 
 
-st.caption(
+
+page_header(
+    "📊 Analysis History",
     "Review previous RFP analyses and AI Sales Engineer sessions"
 )
-
-
-st.divider()
 
 
 
