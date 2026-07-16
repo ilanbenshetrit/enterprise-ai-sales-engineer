@@ -1,4 +1,4 @@
 {
     "test": "memory works",
-    "last_task": "How does Rubrik protect against ransomware?"
+    "last_task": "\nAnalyze this RFP document:\n\nCustomer requirements:\n\n- Enterprise backup solution\n- Ransomware recovery\n- Immutable backup storage\n- Hybrid cloud integration\n- Security and compliance support\n\nFind:\n1. Requirements\n2. Technical questions\n3. Risks\n4. Recommended solution direction\n"
 }

@@ -29,6 +29,7 @@ class EnterpriseAgent:
         self.prompt_builder = PromptBuilder()
 
 
+
     def execute(self, task):
 
         print(f"Agent: {self.name}")
@@ -41,7 +42,7 @@ class EnterpriseAgent:
         )
 
 
-        # Retrieve knowledge
+        # Retrieve relevant knowledge
         knowledge_result = self.knowledge.search(
             task
         )
@@ -52,7 +53,7 @@ class EnterpriseAgent:
 
 
 
-        # Check if a tool is required
+        # Decide if a tool is required
         tool_result = None
 
         tool_name = self.router.decide(
@@ -64,7 +65,7 @@ class EnterpriseAgent:
 
             tool_result = self.use_tool(
                 tool_name,
-                "Enterprise customer"
+                task
             )
 
             print("\nTool Result:")
@@ -72,7 +73,7 @@ class EnterpriseAgent:
 
 
 
-        # Build final prompt
+        # Build prompt
         full_prompt = self.prompt_builder.build(
             system_prompt=self.system_prompt,
             task=task,
@@ -121,7 +122,23 @@ if __name__ == "__main__":
 
 
     result = agent.execute(
-        "How does Rubrik protect against ransomware?"
+        """
+Analyze this RFP document:
+
+Customer requirements:
+
+- Enterprise backup solution
+- Ransomware recovery
+- Immutable backup storage
+- Hybrid cloud integration
+- Security and compliance support
+
+Find:
+1. Requirements
+2. Technical questions
+3. Risks
+4. Recommended solution direction
+"""
     )
 
 

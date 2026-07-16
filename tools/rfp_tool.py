@@ -1,41 +1,127 @@
+"""
+Enterprise AI Sales Platform
+RFP Analyzer Tool v2
+
+Analyzes customer RFP content.
+"""
+
+
 class RFPAnalyzerTool:
 
 
-    def run(self, rfp_text):
+    KEYWORDS = {
 
-        analysis = {
-
-            "requirements": [
-                "Cyber resilience capabilities",
-                "Immutable backup storage",
-                "Ransomware recovery",
-                "Cloud integration",
-                "Security and compliance support"
-            ],
-
-
-            "technical_questions": [
-                "What is your current backup architecture?",
-                "What are your recovery time and recovery point objectives (RTO/RPO)?",
-                "Which cloud platforms are currently in use?",
-                "What compliance requirements must be satisfied?"
-            ],
+        "requirements": [
+            "backup",
+            "recovery",
+            "ransomware",
+            "security",
+            "cloud",
+            "compliance",
+            "resilience"
+        ],
 
 
-            "risks": [
-                "Insufficient ransomware protection",
-                "Recovery process complexity",
-                "Compliance gaps"
-            ],
+        "risks": [
+            "gap",
+            "risk",
+            "challenge",
+            "limitation",
+            "failure"
+        ]
+
+    }
 
 
-            "solution_direction": [
-                "Design a cyber resilience architecture",
-                "Implement immutable backup strategy",
-                "Integrate with hybrid cloud environment"
-            ]
+
+    def run(self, rfp_text: str):
+
+
+        result = {
+
+            "requirements": [],
+
+            "technical_questions": [],
+
+            "risks": [],
+
+            "solution_direction": []
 
         }
 
 
-        return analysis
+        text = rfp_text.lower()
+
+
+
+        # Requirement extraction
+
+        for keyword in self.KEYWORDS["requirements"]:
+
+            if keyword in text:
+
+                result["requirements"].append(
+                    keyword
+                )
+
+
+
+        # Risk detection
+
+        for keyword in self.KEYWORDS["risks"]:
+
+            if keyword in text:
+
+                result["risks"].append(
+                    keyword
+                )
+
+
+
+        # Generate discovery questions
+
+        if "backup" in text:
+
+            result["technical_questions"].append(
+                "What is your current backup architecture?"
+            )
+
+
+        if "recovery" in text:
+
+            result["technical_questions"].append(
+                "What are your RTO and RPO requirements?"
+            )
+
+
+        if "cloud" in text:
+
+            result["technical_questions"].append(
+                "Which cloud platforms are currently in use?"
+            )
+
+
+        # Solution mapping
+
+        if "ransomware" in text:
+
+            result["solution_direction"].append(
+                "Implement ransomware recovery strategy"
+            )
+
+
+        if "backup" in text:
+
+            result["solution_direction"].append(
+                "Design immutable backup architecture"
+            )
+
+
+        if "cloud" in text:
+
+            result["solution_direction"].append(
+                "Integrate hybrid cloud protection"
+            )
+
+
+        return result
