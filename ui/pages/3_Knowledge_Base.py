@@ -6,29 +6,28 @@ Knowledge Base UI
 
 import streamlit as st
 
+
 from pathlib import Path
 
 
-
-st.set_page_config(
-    page_title="Knowledge Base",
-    page_icon="📚",
-    layout="wide"
+from components.layout import (
+    setup_page,
+    page_header
 )
 
 
 
-st.title(
-    "📚 Knowledge Base"
+setup_page(
+    "Knowledge Base",
+    "📚"
 )
 
 
-st.caption(
+
+page_header(
+    "📚 Knowledge Base",
     "Manage enterprise knowledge documents used by the AI Sales Engineer"
 )
-
-
-st.divider()
 
 
 
@@ -67,6 +66,11 @@ else:
 
 
     else:
+
+
+        st.success(
+            f"{len(documents)} knowledge documents available"
+        )
 
 
         for document in documents:
