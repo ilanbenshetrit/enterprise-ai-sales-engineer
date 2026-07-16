@@ -6,22 +6,12 @@ class KnowledgeRetriever:
         results = []
 
 
-        query_words = query.lower().split()
-
-
         for chunk in chunks:
 
-            content = chunk["content"].lower()
-
-
-            score = 0
-
-
-            for word in query_words:
-
-                if word in content:
-
-                    score += 1
+            score = self.calculate_score(
+                query,
+                chunk
+            )
 
 
             if score > 0:
@@ -41,3 +31,24 @@ class KnowledgeRetriever:
 
 
         return results
+
+
+
+    def calculate_score(self, query, chunk):
+
+        query_words = query.lower().split()
+
+        content = chunk["content"].lower()
+
+
+        score = 0
+
+
+        for word in query_words:
+
+            if word in content:
+
+                score += 1
+
+
+        return score
