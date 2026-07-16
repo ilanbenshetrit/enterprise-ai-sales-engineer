@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
-import anthropic
+from openai import OpenAI
+
 
 load_dotenv()
 
@@ -8,21 +9,23 @@ load_dotenv()
 class ClaudeClient:
 
     def __init__(self):
-        self.client = anthropic.Anthropic(
-            api_key=os.getenv("ANTHROPIC_API_KEY")
+
+        self.client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY")
         )
+
 
     def ask(self, prompt):
 
-        response = self.client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            max_tokens=1000,
+        response = self.client.chat.completions.create(
+            model="gpt-4.1-mini",
             messages=[
                 {
                     "role": "user",
                     "content": prompt
                 }
-            ]
+            ],
+            max_tokens=1000
         )
 
-        return response.content[0].text
+        return response.choices[0].message.content

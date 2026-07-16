@@ -3,6 +3,7 @@ from app.prompts_loader import load_sales_engineer_prompt
 from app.memory_manager import MemoryManager
 from tools.tool_registry import ToolRegistry
 from app.task_router import TaskRouter
+from core.knowledge_manager import KnowledgeManager
 
 
 class EnterpriseAgent:
@@ -15,6 +16,7 @@ class EnterpriseAgent:
         self.memory = MemoryManager()
         self.tools = ToolRegistry()
         self.router = TaskRouter()
+        self.knowledge = KnowledgeManager()
 
 
     def execute(self, task):
@@ -26,6 +28,16 @@ class EnterpriseAgent:
             "last_task",
             task
         )
+
+
+        # Retrieve knowledge
+        knowledge_result = self.knowledge.search(
+            "Rubrik"
+        )
+
+
+        print("\nKnowledge Result:")
+        print(knowledge_result)
 
 
         # Check if a tool is required
@@ -45,8 +57,8 @@ class EnterpriseAgent:
             print(tool_result)
 
 
+        # Build prompt
 
-        # Build prompt for Claude
         full_prompt = f"""
 {self.system_prompt}
 
@@ -55,6 +67,9 @@ User Task:
 
 Tool Information:
 {tool_result}
+
+Knowledge Information:
+{knowledge_result}
 """
 
 
