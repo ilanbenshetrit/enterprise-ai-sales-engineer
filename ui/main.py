@@ -7,75 +7,26 @@ Main Dashboard
 import streamlit as st
 
 
-
-st.set_page_config(
-    page_title="Enterprise AI Sales Engineer",
-    page_icon="🤖",
-    layout="wide"
+from components.layout import (
+    setup_page,
+    page_header
 )
 
 
 
-# Sidebar Branding
-
-with st.sidebar:
-
-    st.title(
-        "🤖 Enterprise AI"
-    )
-
-    st.caption(
-        "Sales Engineer Platform"
-    )
-
-
-    st.divider()
-
-
-    st.success(
-        "System Online"
-    )
-
-
-    st.write(
-        """
-        Version: MVP 1.0
-        
-        Agent: Ready
-        
-        Knowledge: Connected
-        
-        Memory: Enabled
-        """
-    )
-
-
-    st.divider()
-
-
-    st.info(
-        "AI-Powered Presales Workspace"
-    )
-
-
-
-# Main Header
-
-st.title(
-    "🤖 Enterprise AI Sales Engineer Platform"
+setup_page(
+    "Enterprise AI Sales Engineer",
+    "🤖"
 )
 
 
-st.caption(
+
+page_header(
+    "🤖 Enterprise AI Sales Engineer Platform",
     "AI-Powered Presales & Solution Engineering Workspace"
 )
 
 
-st.divider()
-
-
-
-# KPI Section
 
 st.subheader(
     "📊 Platform Overview"
@@ -95,7 +46,6 @@ with col1:
     )
 
 
-
 with col2:
 
     st.metric(
@@ -104,14 +54,12 @@ with col2:
     )
 
 
-
 with col3:
 
     st.metric(
         "AI Conversations",
         "148"
     )
-
 
 
 with col4:
@@ -126,8 +74,6 @@ with col4:
 st.divider()
 
 
-
-# Activity and Health
 
 left, right = st.columns(2)
 
@@ -182,8 +128,6 @@ with right:
 st.divider()
 
 
-
-# Capabilities
 
 st.subheader(
     "🚀 Platform Capabilities"

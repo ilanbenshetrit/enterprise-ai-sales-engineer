@@ -92,5 +92,5 @@ def page_header(
     )
 
 
-    st.divider()ס
+    st.divider()
 
