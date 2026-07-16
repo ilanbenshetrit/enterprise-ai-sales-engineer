@@ -1,4 +1,14 @@
+from app.knowledge.similarity import SimilarityCalculator
+
+
+
 class KnowledgeRetriever:
+
+
+    def __init__(self):
+
+        self.similarity = SimilarityCalculator()
+
 
 
     def search(self, query, chunks):
@@ -35,6 +45,15 @@ class KnowledgeRetriever:
 
 
     def calculate_score(self, query, chunk):
+
+        """
+        Future:
+        Query embedding vs Chunk embedding
+
+        Current:
+        Keyword fallback
+        """
+
 
         query_words = query.lower().split()
 
