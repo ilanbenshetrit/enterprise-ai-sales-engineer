@@ -1,4 +1,4 @@
-from app.llm.claude_client import ClaudeClient
+from app.llm.llm_service import LLMService
 from app.prompts_loader import load_sales_engineer_prompt
 from app.memory.manager import MemoryManager
 from tools.tool_registry import ToolRegistry
@@ -16,7 +16,7 @@ class EnterpriseAgent:
 
         self.name = name
 
-        self.llm = ClaudeClient()
+        self.llm = LLMService()
 
         self.system_prompt = load_sales_engineer_prompt()
 
@@ -53,7 +53,6 @@ class EnterpriseAgent:
 
 
         print("\nKnowledge Result:")
-
         print(knowledge_result)
 
 
@@ -78,7 +77,6 @@ class EnterpriseAgent:
 
 
             print("\nTool Result:")
-
             print(tool_result)
 
 
