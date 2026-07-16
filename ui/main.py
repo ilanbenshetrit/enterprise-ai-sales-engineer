@@ -1,4 +1,11 @@
+"""
+Enterprise AI Sales Engineer Platform
+Main Dashboard
+"""
+
+
 import streamlit as st
+
 
 
 st.set_page_config(
@@ -8,11 +15,56 @@ st.set_page_config(
 )
 
 
-# Header
+
+# Sidebar Branding
+
+with st.sidebar:
+
+    st.title(
+        "🤖 Enterprise AI"
+    )
+
+    st.caption(
+        "Sales Engineer Platform"
+    )
+
+
+    st.divider()
+
+
+    st.success(
+        "System Online"
+    )
+
+
+    st.write(
+        """
+        Version: MVP 1.0
+        
+        Agent: Ready
+        
+        Knowledge: Connected
+        
+        Memory: Enabled
+        """
+    )
+
+
+    st.divider()
+
+
+    st.info(
+        "AI-Powered Presales Workspace"
+    )
+
+
+
+# Main Header
 
 st.title(
     "🤖 Enterprise AI Sales Engineer Platform"
 )
+
 
 st.caption(
     "AI-Powered Presales & Solution Engineering Workspace"
@@ -22,17 +74,26 @@ st.caption(
 st.divider()
 
 
-# KPI Cards
+
+# KPI Section
+
+st.subheader(
+    "📊 Platform Overview"
+)
+
+
 
 col1, col2, col3, col4 = st.columns(4)
+
 
 
 with col1:
 
     st.metric(
-        "Knowledge Docs",
+        "Knowledge Documents",
         "18"
     )
+
 
 
 with col2:
@@ -43,12 +104,14 @@ with col2:
     )
 
 
+
 with col3:
 
     st.metric(
-        "AI Requests",
+        "AI Conversations",
         "148"
     )
+
 
 
 with col4:
@@ -59,12 +122,15 @@ with col4:
     )
 
 
+
 st.divider()
 
 
-# Recent Activity + System Health
+
+# Activity and Health
 
 left, right = st.columns(2)
+
 
 
 with left:
@@ -74,16 +140,18 @@ with left:
     )
 
 
-    st.write(
-        """
-        ✅ Rubrik RFP Analysis Completed
-        
-        ✅ Customer Discovery Session Prepared
-        
-        ✅ Knowledge Base Updated
-        
-        ✅ Executive Summary Generated
-        """
+    st.success(
+        "Rubrik RFP Analysis Completed"
+    )
+
+
+    st.success(
+        "Knowledge Base Updated"
+    )
+
+
+    st.success(
+        "AI Discovery Session Generated"
     )
 
 
@@ -91,36 +159,40 @@ with left:
 with right:
 
     st.subheader(
-        "⚙️ System Health"
+        "⚙️ Platform Health"
     )
 
 
     st.success(
-        "Knowledge Base - Online"
+        "Knowledge Engine Online"
     )
 
 
     st.success(
-        "AI Agent - Ready"
+        "Enterprise Agent Ready"
     )
 
 
     st.success(
-        "Memory Service - Healthy"
+        "Memory Service Healthy"
     )
+
 
 
 st.divider()
 
 
-# Platform Description
+
+# Capabilities
 
 st.subheader(
     "🚀 Platform Capabilities"
 )
 
 
+
 cap1, cap2, cap3 = st.columns(3)
+
 
 
 with cap1:
@@ -129,10 +201,11 @@ with cap1:
         """
         📄 RFP Intelligence
         
-        Analyze customer requirements,
-        risks and technical gaps.
+        Analyze requirements,
+        risks and solution direction.
         """
     )
+
 
 
 with cap2:
@@ -141,10 +214,11 @@ with cap2:
         """
         📚 Knowledge Engine
         
-        Retrieve information from
-        enterprise solution knowledge.
+        Enterprise solution
+        knowledge retrieval.
         """
     )
+
 
 
 with cap3:
@@ -153,7 +227,7 @@ with cap3:
         """
         🤖 AI Sales Engineer
         
-        Generate discovery questions,
-        architectures and recommendations.
+        Architecture,
+        discovery and recommendations.
         """
     )
