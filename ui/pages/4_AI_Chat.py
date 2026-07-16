@@ -7,33 +7,31 @@ AI Chat UI
 import streamlit as st
 
 
+from components.layout import (
+    setup_page,
+    page_header
+)
+
+
 from services.agent_service import AgentService
 
 
 
-st.set_page_config(
-    page_title="AI Chat",
-    page_icon="🤖",
-    layout="wide"
+setup_page(
+    "AI Chat",
+    "🤖"
+)
+
+
+
+page_header(
+    "🤖 AI Chat",
+    "Chat with the Enterprise Sales Engineer Agent"
 )
 
 
 
 agent_service = AgentService()
-
-
-
-st.title(
-    "🤖 AI Chat"
-)
-
-
-st.caption(
-    "Chat with the Enterprise Sales Engineer Agent"
-)
-
-
-st.divider()
 
 
 
