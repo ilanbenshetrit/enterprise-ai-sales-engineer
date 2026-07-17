@@ -18,18 +18,56 @@ class OpportunityIntelligence:
 
 
 
+    def build_context(
+        self,
+        opportunity
+    ):
+
+        customer_context = {}
+
+
+        if opportunity.customer:
+
+            customer_context = {
+
+                "name": opportunity.customer.name,
+
+                "industry": opportunity.customer.industry,
+
+                "size": opportunity.customer.size,
+
+                "environment": opportunity.customer.environment,
+
+                "compliance": opportunity.customer.compliance,
+
+                "challenges": opportunity.customer.challenges,
+
+                "business_goals": opportunity.customer.business_goals
+
+            }
+
+
+
+        return {
+
+            "task": "solution_design",
+
+            "knowledge": opportunity.requirements,
+
+            "customer_context": customer_context
+
+        }
+
+
+
     def analyze(
         self,
         opportunity
     ):
 
-        context = {
-
-            "task": "solution_design",
-
-            "knowledge": opportunity.requirements
-
-        }
+        context = self.build_context(
+            opportunity
+        )
 
 
         analysis = self.reasoning_engine.analyze(
