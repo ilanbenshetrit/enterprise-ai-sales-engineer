@@ -1,4 +1,5 @@
 from app.agents.reasoning_engine import SalesReasoningEngine
+from app.architecture.recommendation_engine import ArchitectureRecommendationEngine
 
 
 
@@ -7,13 +8,21 @@ class OpportunityIntelligence:
 
     def __init__(
         self,
-        reasoning_engine=None
+        reasoning_engine=None,
+        architecture_engine=None
     ):
 
         self.reasoning_engine = (
             reasoning_engine
             if reasoning_engine
             else SalesReasoningEngine()
+        )
+
+
+        self.architecture_engine = (
+            architecture_engine
+            if architecture_engine
+            else ArchitectureRecommendationEngine()
         )
 
 
@@ -54,6 +63,8 @@ class OpportunityIntelligence:
 
             "knowledge": opportunity.requirements,
 
+            "requirements": opportunity.requirements,
+
             "customer_context": customer_context
 
         }
@@ -77,6 +88,16 @@ class OpportunityIntelligence:
 
         opportunity.set_analysis(
             analysis
+        )
+
+
+        architecture = self.architecture_engine.recommend(
+            context
+        )
+
+
+        opportunity.set_solution(
+            architecture
         )
 
 
