@@ -27,6 +27,7 @@ class VectorStore:
     def add_many(self, items):
 
         for item in items:
+
             self.add(item)
 
 
@@ -34,3 +35,25 @@ class VectorStore:
     def all(self):
 
         return self.vectors
+
+
+
+    def count(self):
+
+        return len(
+            self.vectors
+        )
+
+
+
+    def clear(self):
+
+        self.vectors = []
+
+
+
+    def exists(self):
+
+        return len(
+            self.vectors
+        ) > 0

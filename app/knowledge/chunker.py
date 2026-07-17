@@ -1,23 +1,31 @@
 class KnowledgeChunker:
 
 
-    def __init__(self, chunk_size=300):
+    def __init__(
+        self,
+        chunk_size=300
+    ):
 
         self.chunk_size = chunk_size
 
 
 
-    def chunk_documents(self, documents):
+    def chunk_documents(
+        self,
+        documents
+    ):
 
         chunks = []
-
 
         chunk_id = 1
 
 
         for document in documents:
 
+
             content = document["content"]
+
+            metadata = document["metadata"]
 
 
             words = content.split()
@@ -29,17 +37,25 @@ class KnowledgeChunker:
                 self.chunk_size
             ):
 
+
                 chunk_text = " ".join(
                     words[i:i + self.chunk_size]
                 )
 
 
                 chunks.append(
+
                     {
                         "chunk_id": chunk_id,
-                        "source": document["source"],
+
+                        "document_id": document["document_id"],
+
+                        "metadata": metadata,
+
                         "content": chunk_text
+
                     }
+
                 )
 
 

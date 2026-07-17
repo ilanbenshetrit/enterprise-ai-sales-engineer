@@ -25,9 +25,11 @@ class KnowledgeService:
 
         self.vector_store = VectorStore()
 
+        self.index_ready = False
 
 
-    def get_knowledge_chunks(self):
+
+    def build_index(self):
 
         documents = self.loader.load_documents()
 
@@ -50,6 +52,20 @@ class KnowledgeService:
         self.vector_store.add_many(
             chunks
         )
+
+
+        self.index_ready = True
+
+
+        return self.vector_store.all()
+
+
+
+    def get_knowledge_chunks(self):
+
+        if not self.index_ready:
+
+            return self.build_index()
 
 
         return self.vector_store.all()
