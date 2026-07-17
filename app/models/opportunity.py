@@ -38,6 +38,8 @@ class Opportunity:
 
         self.implementation_plan = {}
 
+        self.demo_plan = {}
+
 
         self.created_at = datetime.now()
 
@@ -108,6 +110,15 @@ class Opportunity:
 
 
 
+    def set_demo_plan(
+        self,
+        demo
+    ):
+
+        self.demo_plan = demo
+
+
+
     def to_dict(self):
 
         return {
@@ -137,6 +148,8 @@ class Opportunity:
             "poc_plan": self.poc_plan,
 
             "implementation_plan": self.implementation_plan,
+
+            "demo_plan": self.demo_plan,
 
             "created_at": self.created_at.isoformat()
 

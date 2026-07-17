@@ -2,6 +2,7 @@ from app.agents.reasoning_engine import SalesReasoningEngine
 from app.architecture.recommendation_engine import ArchitectureRecommendationEngine
 from app.planning.poc_planner import POCPlanner
 from app.implementation.implementation_planner import ImplementationPlanner
+from app.demo.demo_planner import DemoPlanner
 
 
 
@@ -13,7 +14,8 @@ class OpportunityIntelligence:
         reasoning_engine=None,
         architecture_engine=None,
         poc_planner=None,
-        implementation_planner=None
+        implementation_planner=None,
+        demo_planner=None
     ):
 
         self.reasoning_engine = (
@@ -41,6 +43,13 @@ class OpportunityIntelligence:
             implementation_planner
             if implementation_planner
             else ImplementationPlanner()
+        )
+
+
+        self.demo_planner = (
+            demo_planner
+            if demo_planner
+            else DemoPlanner()
         )
 
 
@@ -162,6 +171,29 @@ class OpportunityIntelligence:
 
         opportunity.set_implementation_plan(
             implementation_plan
+        )
+
+
+        # Demo planning
+
+        demo_context = {
+
+            "requirements": opportunity.requirements,
+
+            "solution": architecture,
+
+            "customer_context": context["customer_context"]
+
+        }
+
+
+        demo_plan = self.demo_planner.create_plan(
+            demo_context
+        )
+
+
+        opportunity.set_demo_plan(
+            demo_plan
         )
 
 
