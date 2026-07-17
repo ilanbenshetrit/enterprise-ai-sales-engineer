@@ -2,6 +2,7 @@ from datetime import datetime
 import uuid
 
 
+
 class Opportunity:
 
 
@@ -14,7 +15,11 @@ class Opportunity:
 
         self.id = str(uuid.uuid4())
 
+        # Backward compatibility
         self.customer_name = customer_name
+
+        # Future customer entity relation
+        self.customer = None
 
         self.title = title
 
@@ -33,6 +38,15 @@ class Opportunity:
 
 
         self.created_at = datetime.now()
+
+
+
+    def set_customer(
+        self,
+        customer
+    ):
+
+        self.customer = customer
 
 
 
@@ -90,6 +104,12 @@ class Opportunity:
             "id": self.id,
 
             "customer_name": self.customer_name,
+
+            "customer": (
+                self.customer.to_dict()
+                if self.customer
+                else None
+            ),
 
             "title": self.title,
 

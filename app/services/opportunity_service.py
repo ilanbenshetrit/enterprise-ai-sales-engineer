@@ -45,6 +45,30 @@ class OpportunityService:
 
 
 
+    def assign_customer(
+        self,
+        opportunity_id,
+        customer
+    ):
+
+        opportunity = self.get(
+            opportunity_id
+        )
+
+
+        if not opportunity:
+            return None
+
+
+        opportunity.set_customer(
+            customer
+        )
+
+
+        return opportunity
+
+
+
     def add_requirement(
         self,
         opportunity_id,
