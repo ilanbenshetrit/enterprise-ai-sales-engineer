@@ -1,30 +1,55 @@
 from app.knowledge.similarity import SimilarityCalculator
 
+from app.embeddings.embedding_service import EmbeddingService
+from app.embeddings.providers.mock_embedding_provider import MockEmbeddingProvider
 
 
 class KnowledgeRetriever:
 
 
-    def __init__(self):
+    def __init__(
+        self,
+        top_k=5,
+        min_score=0.5
+    ):
 
         self.similarity = SimilarityCalculator()
 
+        self.embedding_service = EmbeddingService(
+            MockEmbeddingProvider()
+        )
+
+        self.top_k = top_k
+
+        self.min_score = min_score
 
 
-    def search(self, query, chunks):
+
+    def search(
+        self,
+        query,
+        chunks
+    ):
+
+
+        query_vector = self.embedding_service.create_embedding(
+            query
+        )
+
 
         results = []
 
 
         for chunk in chunks:
 
+
             score = self.calculate_score(
-                query,
+                query_vector,
                 chunk
             )
 
 
-            if score > 0:
+            if score >= self.min_score:
 
                 results.append(
                     {
@@ -40,34 +65,21 @@ class KnowledgeRetriever:
         )
 
 
-        return results
+        return results[:self.top_k]
 
 
 
-    def calculate_score(self, query, chunk):
-
-        """
-        Future:
-        Query embedding vs Chunk embedding
-
-        Current:
-        Keyword fallback
-        """
+    def calculate_score(
+        self,
+        query_vector,
+        chunk
+    ):
 
 
-        query_words = query.lower().split()
-
-        content = chunk["content"].lower()
+        chunk_vector = chunk["embedding"]["vector"]
 
 
-        score = 0
-
-
-        for word in query_words:
-
-            if word in content:
-
-                score += 1
-
-
-        return score
+        return self.similarity.cosine_similarity(
+            query_vector,
+            chunk_vector
+        )
