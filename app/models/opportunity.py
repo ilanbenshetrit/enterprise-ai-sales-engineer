@@ -40,6 +40,8 @@ class Opportunity:
 
         self.demo_plan = {}
 
+        self.proposal = {}
+
 
         self.created_at = datetime.now()
 
@@ -119,6 +121,15 @@ class Opportunity:
 
 
 
+    def set_proposal(
+        self,
+        proposal
+    ):
+
+        self.proposal = proposal
+
+
+
     def to_dict(self):
 
         return {
@@ -150,6 +161,8 @@ class Opportunity:
             "implementation_plan": self.implementation_plan,
 
             "demo_plan": self.demo_plan,
+
+            "proposal": self.proposal,
 
             "created_at": self.created_at.isoformat()
 

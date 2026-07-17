@@ -3,6 +3,7 @@ from app.architecture.recommendation_engine import ArchitectureRecommendationEng
 from app.planning.poc_planner import POCPlanner
 from app.implementation.implementation_planner import ImplementationPlanner
 from app.demo.demo_planner import DemoPlanner
+from app.proposal.proposal_generator import ProposalGenerator
 
 
 
@@ -15,7 +16,8 @@ class OpportunityIntelligence:
         architecture_engine=None,
         poc_planner=None,
         implementation_planner=None,
-        demo_planner=None
+        demo_planner=None,
+        proposal_generator=None
     ):
 
         self.reasoning_engine = (
@@ -50,6 +52,13 @@ class OpportunityIntelligence:
             demo_planner
             if demo_planner
             else DemoPlanner()
+        )
+
+
+        self.proposal_generator = (
+            proposal_generator
+            if proposal_generator
+            else ProposalGenerator()
         )
 
 
@@ -194,6 +203,35 @@ class OpportunityIntelligence:
 
         opportunity.set_demo_plan(
             demo_plan
+        )
+
+
+        # Proposal generation
+
+        proposal_context = {
+
+            "customer_context": context["customer_context"],
+
+            "analysis": analysis,
+
+            "solution": architecture,
+
+            "poc_plan": poc_plan,
+
+            "implementation_plan": implementation_plan,
+
+            "demo_plan": demo_plan
+
+        }
+
+
+        proposal = self.proposal_generator.generate(
+            proposal_context
+        )
+
+
+        opportunity.set_proposal(
+            proposal
         )
 
 
