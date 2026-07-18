@@ -23,14 +23,15 @@ _MEGA_MENU = [
             ("AI Copilot Triage", "/security-copilot"),
             ("Alerting & Remediation", "/security-alerting"),
             ("CI/CD & Cloud Integration", "/security-integrations"),
+            ("Live Security Console", "/security-console"),
         ],
         "highlight_label": "Our Flagship Platform",
         "highlight_text": (
             "Continuous, AI-assisted security for CI/CD pipelines, "
             "Kubernetes, containers, and cloud."
         ),
-        "highlight_href": "/security",
-        "highlight_cta": "Explore the Security Platform",
+        "highlight_href": "/security-console",
+        "highlight_cta": "Open the Live Console",
     },
     {
         "label": "AI Sales Engineer",

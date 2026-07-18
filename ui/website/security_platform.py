@@ -32,7 +32,11 @@ def render_security_platform():
             AI copilot fit into your CI/CD, Kubernetes, and cloud
             workflows.
             </div>
-            <a class="kf-cta-button" href="/security-integrations" target="_self">
+            <a class="kf-cta-button" href="/security-console" target="_self">
+            Open the Live Security Console
+            </a>
+            <a class="kf-cta-button" href="/security-integrations" target="_self"
+               style="background: rgba(255,255,255,0.08); margin-left: 14px;">
             See CI/CD &amp; Cloud Integration
             </a>
         </div>
