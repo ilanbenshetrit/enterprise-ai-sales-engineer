@@ -14,6 +14,37 @@ _REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")
 if _REPO_ROOT not in sys.path:
     sys.path.insert(0, _REPO_ROOT)
 
+# --- Fix: Streamlit's markdown renderer follows CommonMark, which only
+# treats a block as raw HTML if it starts at column 0-3. Every component
+# in this site writes its HTML as an indented Python string (for
+# readability), which made Streamlit fall back to showing it as a literal
+# code block instead of rendering it. Rather than hand-flatten every
+# st.markdown(..., unsafe_allow_html=True) call across every component
+# file, we normalize indentation once, globally, right here. This affects
+# every page in the app (including the embedded product dashboard),
+# since `streamlit` is a single shared module object.
+_original_markdown = st.markdown
+
+
+def _flattened_markdown(body, *args, **kwargs):
+
+    if kwargs.get("unsafe_allow_html") and isinstance(body, str) and "\n" in body:
+        # Drop blank lines too: components that interpolate other
+        # components (e.g. the logo/icon snippets) reintroduce blank
+        # lines at runtime that no amount of static source cleanup can
+        # catch, and a blank line is exactly what makes Streamlit's
+        # markdown parser stop treating the rest as raw HTML.
+        body = "\n".join(
+            line.strip()
+            for line in body.split("\n")
+            if line.strip()
+        )
+
+    return _original_markdown(body, *args, **kwargs)
+
+
+st.markdown = _flattened_markdown
+
 from home import render_home
 from platform_page import render_platform
 from solutions_page import render_solutions
