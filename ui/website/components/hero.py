@@ -52,10 +52,26 @@ def render_hero():
     st.markdown(
         f"""
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
 
         .hero {{
             text-align: center;
             padding: 80px 20px 20px;
+        }}
+
+        .hero-signature-wrap {{
+            padding: 18px 20px 6px;
+        }}
+
+        .hero-signature {{
+            font-family: 'Alex Brush', cursive;
+            font-size: 40px;
+            font-weight: 400;
+            line-height: 1;
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
         }}
 
         .hero-title {{
@@ -121,7 +137,10 @@ def render_hero():
             <div class="hero-title">
                 <span class="hero-gradient">Building The Future</span>
                 <br>
-                Of Intelligent Enterprise Automation
+                <span class="hero-gradient">Of Intelligent Enterprise Automation</span>
+            </div>
+            <div class="hero-signature-wrap">
+                <span class="hero-signature">Kubeforge</span>
             </div>
             <div class="hero-description">
                 Kubeforge delivers advanced AI-driven automation capabilities
