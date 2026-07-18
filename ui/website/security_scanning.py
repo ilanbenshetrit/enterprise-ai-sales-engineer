@@ -22,7 +22,7 @@ def render_security_scanning():
         <div class="kf-cta">
             <div class="kf-cta-title">See How Findings Become Risk Insight</div>
             <div class="kf-cta-desc">
-            Raw findings are only the start. Next, KubeForge correlates
+            Raw findings are only the start. Next, SixStage correlates
             everything into a single posture and risk view.
             </div>
             <a class="kf-cta-button" href="/security-posture" target="_self">

@@ -1,5 +1,5 @@
 """
-Kubeforge Contact Page Content
+SixStage Contact Page Content
 """
 
 import streamlit as st
@@ -51,7 +51,7 @@ def render_contact_content():
             <div class="kf-section-title">Let's Talk About Your Next Deal</div>
             <div class="kf-section-body">
                 <p>Tell us a bit about what you are working on and a member
-                of the Kubeforge team will follow up.</p>
+                of the SixStage team will follow up.</p>
             </div>
         </div>
         """,
@@ -65,7 +65,7 @@ def render_contact_content():
             """
             <div class="kf-contact-info-item">
                 <div class="kf-contact-info-label">General Inquiries</div>
-                <div class="kf-contact-info-desc">hello@kubeforge.ai</div>
+                <div class="kf-contact-info-desc">hello@sixstage.ai</div>
             </div>
             <div class="kf-contact-info-item">
                 <div class="kf-contact-info-label">Headquarters</div>

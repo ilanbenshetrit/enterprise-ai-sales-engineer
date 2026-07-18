@@ -11,7 +11,7 @@ def render():
     st.subheader("Turn RFP Requirements Into a Full Intelligence Package")
 
     st.caption(
-        "Paste the requirements pulled from an RFP and Kubeforge will run "
+        "Paste the requirements pulled from an RFP and SixStage will run "
         "them through the same opportunity intelligence pipeline used "
         "everywhere else on the platform: analysis, architecture, POC "
         "plan, implementation plan, demo plan, and proposal."

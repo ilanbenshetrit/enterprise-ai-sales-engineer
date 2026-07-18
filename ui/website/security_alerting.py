@@ -20,9 +20,9 @@ def render_security_alerting():
     st.markdown(
         """
         <div class="kf-cta">
-            <div class="kf-cta-title">See KubeForge Fit Your Pipeline</div>
+            <div class="kf-cta-title">See SixStage Fit Your Pipeline</div>
             <div class="kf-cta-desc">
-            You've seen all four stages. Now see exactly how KubeForge
+            You've seen all four stages. Now see exactly how SixStage
             connects into your CI/CD, Kubernetes, and cloud environment.
             </div>
             <a class="kf-cta-button" href="/security-integrations" target="_self">

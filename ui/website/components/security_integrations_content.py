@@ -9,7 +9,7 @@ _INTEGRATIONS = [
     {
         "title": "CI/CD Pipelines",
         "desc": (
-            "KubeForge plugs into your existing pipeline as a stage, not a "
+            "SixStage plugs into your existing pipeline as a stage, not a "
             "separate tool teams have to remember to run. Scans trigger on "
             "every build, and a pipeline can be configured to fail on "
             "newly introduced critical risk &mdash; the same gate teams "
@@ -71,7 +71,7 @@ def render_security_integrations_content():
             <div class="kf-section-label">Integration</div>
             <div class="kf-section-title">Security That Moves at the Speed of Your Pipeline</div>
             <div class="kf-section-body">
-                <p>KubeForge is designed to sit inside the systems your
+                <p>SixStage is designed to sit inside the systems your
                 engineering team already runs &mdash; not as a dashboard
                 you check once a quarter, but as a continuous layer across
                 four surfaces:</p>

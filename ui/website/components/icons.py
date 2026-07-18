@@ -1,5 +1,5 @@
 """
-Kubeforge Icon Set
+SixStage Icon Set
 
 Small, single-color line icons (feather-icon style) used across
 service and capability cards. Kept minimal and geometric to match

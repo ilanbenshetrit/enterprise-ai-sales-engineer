@@ -1,5 +1,5 @@
 """
-Kubeforge Company Page — Careers Teaser
+SixStage Company Page — Careers Teaser
 """
 
 import streamlit as st

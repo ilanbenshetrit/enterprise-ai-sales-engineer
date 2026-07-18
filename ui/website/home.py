@@ -1,5 +1,5 @@
 """
-Kubeforge Corporate Header Test
+SixStage Corporate Header Test
 """
 
 import streamlit as st

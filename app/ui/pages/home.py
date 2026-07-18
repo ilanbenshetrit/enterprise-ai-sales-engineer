@@ -4,7 +4,7 @@ import streamlit as st
 def render():
 
     st.title(
-        "Kubeforge"
+        "SixStage"
     )
 
     st.subheader(
@@ -13,7 +13,7 @@ def render():
 
     st.write(
         """
-        Kubeforge builds AI-powered enterprise agents
+        SixStage builds AI-powered enterprise agents
         that transform complex technical sales processes
         into intelligent, repeatable workflows.
         """

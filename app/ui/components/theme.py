@@ -1,5 +1,5 @@
 """
-Kubeforge Product Dashboard Theme
+SixStage Product Dashboard Theme
 
 Applies the same dark gradient brand background used on the
 marketing site (ui/website/theme.py) to the internal product

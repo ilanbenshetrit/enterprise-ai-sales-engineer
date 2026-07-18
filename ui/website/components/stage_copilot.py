@@ -98,7 +98,7 @@ def render_stage_copilot():
                 Ask your posture data <span class="gradient-text">a question</span>
             </div>
             <div class="kf-stage-desc">
-                The same reasoning discipline behind Kubeforge's AI Sales
+                The same reasoning discipline behind SixStage's AI Sales
                 Engineer applies here: a copilot grounded in your real
                 findings, able to explain what changed and why it matters.
             </div>

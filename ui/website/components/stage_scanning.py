@@ -107,7 +107,7 @@ def render_stage_scanning():
                 Four scanners, <span class="gradient-text">one continuous view</span>
             </div>
             <div class="kf-stage-desc">
-                KubeForge runs on a schedule and on every pipeline trigger,
+                SixStage runs on a schedule and on every pipeline trigger,
                 covering the surfaces where risk actually shows up:
                 Kubernetes, dependencies, source history, and network
                 exposure. Nothing waits for a quarterly audit.

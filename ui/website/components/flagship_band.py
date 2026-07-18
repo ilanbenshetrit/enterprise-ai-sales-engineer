@@ -1,5 +1,5 @@
 """
-Kubeforge Home Page — Flagship Product Band
+SixStage Home Page — Flagship Product Band
 """
 
 import streamlit as st
@@ -13,10 +13,10 @@ def render_flagship_band():
             <div class="kf-section" style="margin-top: 90px; margin-bottom: 90px; text-align: center;">
                 <div class="kf-section-label">Our Flagship Platform</div>
                 <div class="kf-section-title">
-                    <span class="gradient-text">KubeForge Security Co-Pilot</span>
+                    <span class="gradient-text">SixStage Security Co-Pilot</span>
                 </div>
                 <div class="kf-section-body" style="max-width: 750px; margin: 0 auto;">
-                    <p>Everything Kubeforge builds &mdash; agent orchestration,
+                    <p>Everything SixStage builds &mdash; agent orchestration,
                     retrieval-grounded reasoning, automated planning &mdash;
                     comes together in our flagship product: an AI-native
                     security platform for CI/CD pipelines, Kubernetes,

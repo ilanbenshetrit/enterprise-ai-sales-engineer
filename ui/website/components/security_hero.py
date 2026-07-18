@@ -40,14 +40,14 @@ def render_security_hero():
         <div class="kf-security-hero">
             <div class="kf-security-eyebrow">Our Flagship Platform</div>
             <div class="kf-security-title">
-                <span class="gradient-text">KubeForge Security Co-Pilot</span>
+                <span class="gradient-text">SixStage Security Co-Pilot</span>
                 for Cloud-Native Infrastructure
             </div>
             <div class="kf-security-desc">
                 Continuous, AI-assisted security for the systems modern
                 engineering teams actually run on: CI/CD pipelines,
                 Kubernetes clusters, container images, and cloud
-                environments. This is where Kubeforge's AI engineering
+                environments. This is where SixStage's AI engineering
                 work becomes a product &mdash; the same reasoning and
                 automation discipline behind our AI Sales Engineer,
                 applied to protecting infrastructure.

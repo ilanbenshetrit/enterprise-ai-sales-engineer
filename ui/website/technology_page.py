@@ -1,5 +1,5 @@
 """
-Kubeforge Technology Page
+SixStage Technology Page
 """
 
 import streamlit as st

@@ -1,5 +1,5 @@
 """
-Kubeforge Contact Page
+SixStage Contact Page
 """
 
 from theme import apply_theme

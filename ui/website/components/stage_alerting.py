@@ -109,7 +109,7 @@ def render_stage_alerting():
             </div>
             <div class="kf-stage-desc">
                 Findings don't sit in a dashboard waiting to be noticed.
-                KubeForge pushes risk to the team the moment it's found,
+                SixStage pushes risk to the team the moment it's found,
                 and can gate a pipeline outright when the risk is critical.
             </div>
         </div>

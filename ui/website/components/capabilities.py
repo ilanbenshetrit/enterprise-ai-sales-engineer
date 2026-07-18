@@ -1,5 +1,5 @@
 """
-Kubeforge Platform Page — Capability Pipeline
+SixStage Platform Page — Capability Pipeline
 """
 
 import streamlit as st
@@ -10,7 +10,7 @@ _STAGES = [
         "n": "01",
         "title": "Opportunity Intelligence",
         "desc": (
-            "Kubeforge ingests customer and deal context to surface signal "
+            "SixStage ingests customer and deal context to surface signal "
             "buried in CRM records, notes, and historical engagement &mdash; "
             "flagging risk, readiness, and where technical effort should "
             "focus first."
@@ -30,7 +30,7 @@ _STAGES = [
         "n": "03",
         "title": "POC Planning",
         "desc": (
-            "Kubeforge scopes proof-of-concept plans automatically: success "
+            "SixStage scopes proof-of-concept plans automatically: success "
             "criteria, timeline, and resourcing &mdash; so engineers open a "
             "validated plan instead of a blank page."
         ),

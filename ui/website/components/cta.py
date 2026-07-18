@@ -1,5 +1,5 @@
 """
-Kubeforge Closing CTA Section
+SixStage Closing CTA Section
 """
 
 import streamlit as st
@@ -46,7 +46,7 @@ def render_cta():
         </style>
         <div class="kf-cta">
             <div class="kf-cta-title">See the Platform Behind the Story</div>
-            <div class="kf-cta-desc">Kubeforge's automation platform is already live
+            <div class="kf-cta-desc">SixStage's automation platform is already live
             inside enterprise environments worldwide. Explore how our AI engine
             analyzes opportunities, architects solutions, and plans delivery
             &mdash; end to end.</div>

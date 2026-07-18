@@ -1,5 +1,5 @@
 """
-Kubeforge Solutions Page
+SixStage Solutions Page
 """
 
 import streamlit as st
@@ -23,7 +23,7 @@ def render_solutions():
             <div class="kf-cta-title">Not Sure Where to Start?</div>
             <div class="kf-cta-desc">
             Tell us about your industry and we will show you exactly where
-            Kubeforge fits into your sales engineering workflow.
+            SixStage fits into your sales engineering workflow.
             </div>
             <a class="kf-cta-button" href="/contact" target="_self">Talk to Us</a>
         </div>

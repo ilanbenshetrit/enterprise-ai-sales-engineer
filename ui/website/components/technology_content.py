@@ -1,5 +1,5 @@
 """
-Kubeforge Technology Page Content
+SixStage Technology Page Content
 """
 
 import streamlit as st
@@ -75,7 +75,7 @@ def render_technology_content():
             <div class="kf-section-label">Technology</div>
             <div class="kf-section-title">Built for Production, Not Demos</div>
             <div class="kf-section-body">
-                <p>Kubeforge is engineered as infrastructure, not a single
+                <p>SixStage is engineered as infrastructure, not a single
                 prompt. The platform is organized into four layers that
                 work together on every opportunity:</p>
             </div>

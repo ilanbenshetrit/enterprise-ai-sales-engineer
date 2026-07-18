@@ -1,9 +1,9 @@
 """
-Kubeforge Corporate Header — Full Mega-Menu Navigation
+SixStage Corporate Header — Full Mega-Menu Navigation
 
 Structured like a large enterprise site's nav (categories that reveal
 a wide panel of sub-links plus a highlight/CTA panel on hover),
-scaled to Kubeforge's actual page count rather than padded out with
+scaled to SixStage's actual page count rather than padded out with
 filler links.
 """
 
@@ -66,13 +66,13 @@ _MEGA_MENU = [
         "label": "Company",
         "href": "/company",
         "links": [
-            ("About Kubeforge", "/company"),
+            ("About SixStage", "/company"),
             ("Contact Us", "/contact"),
         ],
         "highlight_label": "Our Story",
         "highlight_text": (
             "Built by engineers who got tired of manual work — how "
-            "Kubeforge started and where it's headed."
+            "SixStage started and where it's headed."
         ),
         "highlight_href": "/company",
         "highlight_cta": "Learn Our Story",

@@ -1,5 +1,5 @@
 """
-Kubeforge Security Platform — CI/CD & Cloud Integration Page
+SixStage Security Platform — CI/CD & Cloud Integration Page
 """
 
 import streamlit as st
@@ -24,7 +24,7 @@ def render_security_integrations():
             <div class="kf-cta-desc">
             Every environment is wired differently. Tell us how your
             CI/CD, Kubernetes, and cloud setup looks and we will show you
-            exactly where KubeForge fits.
+            exactly where SixStage fits.
             </div>
             <a class="kf-cta-button" href="/contact" target="_self">Contact Us</a>
         </div>

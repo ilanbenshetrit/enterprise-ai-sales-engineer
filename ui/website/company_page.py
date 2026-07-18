@@ -1,5 +1,5 @@
 """
-Kubeforge Company Page
+SixStage Company Page
 """
 
 import streamlit as st
@@ -23,7 +23,7 @@ def render_company():
         """
         <div class="kf-section" style="text-align:center; margin-bottom:0;">
             <div class="kf-section-label">Company</div>
-            <div class="kf-section-title">Building Kubeforge</div>
+            <div class="kf-section-title">Building SixStage</div>
         </div>
         """,
         unsafe_allow_html=True
@@ -39,7 +39,7 @@ def render_company():
         <div class="kf-cta">
             <div class="kf-cta-title">Want to Work With Us?</div>
             <div class="kf-cta-desc">
-            Whether you are exploring a partnership or a role at Kubeforge,
+            Whether you are exploring a partnership or a role at SixStage,
             we would like to hear from you.
             </div>
             <a class="kf-cta-button" href="/contact" target="_self">Get in Touch</a>

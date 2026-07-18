@@ -1,5 +1,5 @@
 """
-Kubeforge Services / What We Do Section
+SixStage Services / What We Do Section
 """
 
 import streamlit as st
@@ -112,7 +112,7 @@ def render_services():
             <div class="kf-section-label">What We Do</div>
             <div class="kf-section-title">Enterprise AI Automation, Engineered for Production</div>
             <div class="kf-section-body">
-                <p>Today, Kubeforge designs, builds, and operates AI automation
+                <p>Today, SixStage designs, builds, and operates AI automation
                 systems for enterprises that need more than a proof of concept.
                 Our work spans four core disciplines:</p>
             </div>

@@ -1,5 +1,5 @@
 """
-Kubeforge Website Footer
+SixStage Website Footer
 """
 
 import streamlit as st
@@ -15,7 +15,7 @@ def render_footer():
         f"""
         <div style="text-align:center; padding:20px 40px 40px;">
             <div style="display:flex; justify-content:center; margin-bottom:16px;">
-                {kf_logo_lockup(size=32, wordmark_size="22px")}
+                {kf_logo_lockup(size=32, wordmark_size="22px", show_tagline=False)}
             </div>
             <p style="color:#94a3b8; font-size:16px; margin:0 0 16px;">
             AI Engineering &amp; Cloud-Native Security
@@ -32,7 +32,7 @@ def render_footer():
             <a href="/company" target="_self" style="color:#94a3b8; text-decoration:none;">Careers</a>
             </p>
             <p style="color:#64748b; font-size:14px; margin-top:16px;">
-            &copy; 2026 Kubeforge. All rights reserved.
+            &copy; 2026 SixStage. All rights reserved.
             </p>
         </div>
         """,

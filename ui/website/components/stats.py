@@ -1,5 +1,5 @@
 """
-Kubeforge Stats Bar
+SixStage Stats Bar
 """
 
 import streamlit as st

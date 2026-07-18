@@ -1,5 +1,5 @@
 """
-Kubeforge Platform Page — Intro Banner
+SixStage Platform Page — Intro Banner
 """
 
 import streamlit as st
@@ -38,7 +38,7 @@ def render_platform_hero():
         }
         </style>
         <div class="kf-platform-hero">
-            <div class="kf-platform-eyebrow">The Kubeforge Platform</div>
+            <div class="kf-platform-eyebrow">The SixStage Platform</div>
             <div class="kf-platform-title">
                 One AI engine.
                 <span class="gradient-text">Six stages</span>
@@ -46,7 +46,7 @@ def render_platform_hero():
             </div>
             <div class="kf-platform-desc">
                 From the first signal in a CRM record to a delivered solution
-                package, Kubeforge's platform is already running the full
+                package, SixStage's platform is already running the full
                 technical sales workflow &mdash; so your engineers spend their
                 time on judgment calls, not busywork.
             </div>

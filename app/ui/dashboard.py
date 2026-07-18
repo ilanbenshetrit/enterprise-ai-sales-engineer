@@ -1,5 +1,5 @@
 """
-Kubeforge Product Dashboard
+SixStage Product Dashboard
 
 The actual internal sales-engineering tool: customer records,
 opportunity management, and the full six-stage AI intelligence
@@ -64,7 +64,7 @@ def render_dashboard():
 
     data = service.get_dashboard_data()
 
-    st.title("Kubeforge")
+    st.title("SixStage")
     st.subheader("Enterprise AI Sales Engineer Platform")
     st.divider()
 

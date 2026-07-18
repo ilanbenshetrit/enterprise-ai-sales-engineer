@@ -1,5 +1,5 @@
 """
-Kubeforge Vision Section
+SixStage Vision Section
 """
 
 import streamlit as st

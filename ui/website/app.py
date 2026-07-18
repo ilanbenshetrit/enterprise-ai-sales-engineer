@@ -1,5 +1,5 @@
 """
-Kubeforge Website Application
+SixStage Website Application
 """
 
 import os
@@ -62,14 +62,14 @@ from app.ui.dashboard import render_dashboard
 
 
 st.set_page_config(
-    page_title="Kubeforge",
-    page_icon="K",
+    page_title="SixStage",
+    page_icon="S",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
 pages = [
-    st.Page(render_home, title="Kubeforge", url_path="home", default=True),
+    st.Page(render_home, title="SixStage", url_path="home", default=True),
     st.Page(render_security_platform, title="Security Platform", url_path="security"),
     st.Page(render_platform, title="AI Sales Engineer", url_path="platform"),
     st.Page(render_dashboard, title="Live Platform", url_path="demo"),

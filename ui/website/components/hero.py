@@ -1,5 +1,5 @@
 """
-Kubeforge Hero Section
+SixStage Hero Section
 """
 
 import streamlit as st
@@ -82,7 +82,7 @@ _SPOTLIGHT_SLIDES = [
         "eyebrow": "Our Story",
         "title": "Built by Engineers Who Got Tired of Manual Work",
         "desc": (
-            "Kubeforge exists to turn complex technical processes into "
+            "SixStage exists to turn complex technical processes into "
             "automated, intelligent systems."
         ),
         "href": "/company",
@@ -309,10 +309,10 @@ def render_hero():
                 <span class="hero-gradient">Of Intelligent Enterprise Automation</span>
             </div>
             <div class="hero-signature-wrap">
-                <span class="hero-signature">Kubeforge</span>
+                <span class="hero-signature">sixstage</span>
             </div>
             <div class="hero-description">
-                Kubeforge delivers advanced AI-driven automation capabilities
+                SixStage delivers advanced AI-driven automation capabilities
                 that help organizations transform complex processes into
                 secure, intelligent, and scalable digital environments.
             </div>

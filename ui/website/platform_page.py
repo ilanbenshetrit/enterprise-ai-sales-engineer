@@ -1,5 +1,5 @@
 """
-Kubeforge Platform Page
+SixStage Platform Page
 """
 
 import streamlit as st

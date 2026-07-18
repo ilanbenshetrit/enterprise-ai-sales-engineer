@@ -1,5 +1,5 @@
 """
-Kubeforge Security Platform Page
+SixStage Security Platform Page
 """
 
 import streamlit as st
@@ -26,7 +26,7 @@ def render_security_platform():
     st.markdown(
         """
         <div class="kf-cta">
-            <div class="kf-cta-title">See KubeForge Secure a Real Pipeline</div>
+            <div class="kf-cta-title">See SixStage Secure a Real Pipeline</div>
             <div class="kf-cta-desc">
             Explore how continuous scanning, posture management, and the
             AI copilot fit into your CI/CD, Kubernetes, and cloud

@@ -1,5 +1,5 @@
 """
-Kubeforge Solutions Page Content
+SixStage Solutions Page Content
 """
 
 import streamlit as st
