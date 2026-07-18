@@ -4,19 +4,10 @@ Kubeforge Solutions Page Content
 
 import streamlit as st
 
-from components.icons import (
-    ICON_OPPORTUNITY,
-    ICON_KNOWLEDGE,
-    ICON_AUTOMATION,
-    ICON_ARCHITECTURE,
-    ICON_AGENTS,
-    ICON_PACKAGE,
-)
-
 
 _SOLUTIONS = [
     {
-        "icon": ICON_OPPORTUNITY,
+        "n": "01",
         "title": "Financial Services",
         "desc": (
             "Automate KYC-heavy discovery, architect compliant hybrid-cloud "
@@ -25,8 +16,8 @@ _SOLUTIONS = [
         ),
     },
     {
-        "icon": ICON_KNOWLEDGE,
-        "title": "Healthcare & Life Sciences",
+        "n": "02",
+        "title": "Healthcare &amp; Life Sciences",
         "desc": (
             "Navigate HIPAA and data-residency constraints automatically "
             "while designing architectures for clinical, research, and "
@@ -34,8 +25,8 @@ _SOLUTIONS = [
         ),
     },
     {
-        "icon": ICON_AUTOMATION,
-        "title": "Manufacturing & Supply Chain",
+        "n": "03",
+        "title": "Manufacturing &amp; Supply Chain",
         "desc": (
             "Plan automation projects across OT and IT boundaries &mdash; "
             "from plant-floor integration to end-to-end supply chain "
@@ -43,7 +34,7 @@ _SOLUTIONS = [
         ),
     },
     {
-        "icon": ICON_ARCHITECTURE,
+        "n": "04",
         "title": "Public Sector",
         "desc": (
             "Meet procurement and security accreditation requirements from "
@@ -52,7 +43,7 @@ _SOLUTIONS = [
         ),
     },
     {
-        "icon": ICON_AGENTS,
+        "n": "05",
         "title": "Insurance",
         "desc": (
             "Accelerate claims and underwriting automation opportunities "
@@ -61,8 +52,8 @@ _SOLUTIONS = [
         ),
     },
     {
-        "icon": ICON_PACKAGE,
-        "title": "Technology & SaaS",
+        "n": "06",
+        "title": "Technology &amp; SaaS",
         "desc": (
             "Scope integrations and multi-tenant architecture for platform "
             "and infrastructure deals, from proof-of-concept to production "
@@ -77,7 +68,7 @@ def render_solutions_content():
     cards_html = "".join(
         f"""
         <div class="kf-card">
-            <div class="kf-card-icon">{s['icon']}</div>
+            <div class="kf-card-number">{s['n']}</div>
             <div class="kf-card-title">{s['title']}</div>
             <div class="kf-card-desc">{s['desc']}</div>
         </div>

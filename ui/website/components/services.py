@@ -4,22 +4,67 @@ Kubeforge Services / What We Do Section
 
 import streamlit as st
 
-from components.icons import (
-    ICON_AUTOMATION,
-    ICON_AGENTS,
-    ICON_KNOWLEDGE,
-    ICON_ARCHITECTURE,
-)
+
+_SERVICES = [
+    {
+        "n": "01",
+        "title": "Intelligent Process Automation",
+        "desc": (
+            "We re-architect manual, document-heavy, and decision-intensive "
+            "workflows into automated pipelines powered by large language "
+            "models, retrieval-augmented reasoning, and domain-specific "
+            "agents &mdash; cutting processing time from days to minutes."
+        ),
+    },
+    {
+        "n": "02",
+        "title": "Autonomous Agent Orchestration",
+        "desc": (
+            "We design multi-agent systems that plan, execute, and "
+            "self-correct across complex enterprise tasks &mdash; from "
+            "opportunity intelligence to implementation planning &mdash; "
+            "with full auditability and human-in-the-loop controls."
+        ),
+    },
+    {
+        "n": "03",
+        "title": "Enterprise Knowledge Systems",
+        "desc": (
+            "We build secure retrieval and knowledge infrastructure that "
+            "lets AI reason over an organization's proprietary data "
+            "&mdash; contracts, technical documentation, historical deals "
+            "&mdash; without that data ever leaving their environment."
+        ),
+    },
+    {
+        "n": "04",
+        "title": "Custom AI Architecture &amp; Advisory",
+        "desc": (
+            "For organizations building their own AI capability, we design "
+            "the underlying architecture: model selection, evaluation "
+            "frameworks, security boundaries, and integration patterns "
+            "tailored to their existing technology stack."
+        ),
+    },
+]
 
 
 def render_services():
 
+    cards_html = "".join(
+        f"""
+        <div class="kf-service-card">
+            <div class="kf-card-number">{s['n']}</div>
+            <div class="kf-service-title">{s['title']}</div>
+            <div class="kf-service-desc">{s['desc']}</div>
+        </div>
+        """
+        for s in _SERVICES
+    )
+
     st.markdown(
         f"""
         <style>
-        .kf-service-icon {{
-            margin-bottom: 16px;
-        }}
         .kf-services-grid {{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -72,41 +117,7 @@ def render_services():
                 Our work spans four core disciplines:</p>
             </div>
             <div class="kf-services-grid">
-                <div class="kf-service-card">
-                    <div class="kf-service-icon">{ICON_AUTOMATION}</div>
-                    <div class="kf-service-title">Intelligent Process Automation</div>
-                    <div class="kf-service-desc">We re-architect manual,
-                    document-heavy, and decision-intensive workflows into automated
-                    pipelines powered by large language models, retrieval-augmented
-                    reasoning, and domain-specific agents &mdash; cutting processing
-                    time from days to minutes.</div>
-                </div>
-                <div class="kf-service-card">
-                    <div class="kf-service-icon">{ICON_AGENTS}</div>
-                    <div class="kf-service-title">Autonomous Agent Orchestration</div>
-                    <div class="kf-service-desc">We design multi-agent systems that
-                    plan, execute, and self-correct across complex enterprise tasks
-                    &mdash; from opportunity intelligence to implementation planning
-                    &mdash; with full auditability and human-in-the-loop controls.</div>
-                </div>
-                <div class="kf-service-card">
-                    <div class="kf-service-icon">{ICON_KNOWLEDGE}</div>
-                    <div class="kf-service-title">Enterprise Knowledge Systems</div>
-                    <div class="kf-service-desc">We build secure retrieval and
-                    knowledge infrastructure that lets AI reason over an
-                    organization's proprietary data &mdash; contracts, technical
-                    documentation, historical deals &mdash; without that data ever
-                    leaving their environment.</div>
-                </div>
-                <div class="kf-service-card">
-                    <div class="kf-service-icon">{ICON_ARCHITECTURE}</div>
-                    <div class="kf-service-title">Custom AI Architecture &amp; Advisory</div>
-                    <div class="kf-service-desc">For organizations building their own
-                    AI capability, we design the underlying architecture: model
-                    selection, evaluation frameworks, security boundaries, and
-                    integration patterns tailored to their existing technology
-                    stack.</div>
-                </div>
+                {cards_html}
             </div>
             <div class="kf-industries">
                 <div class="kf-industry-tag">Financial Services</div>

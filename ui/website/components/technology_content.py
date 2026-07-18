@@ -4,18 +4,11 @@ Kubeforge Technology Page Content
 
 import streamlit as st
 
-from components.icons import (
-    ICON_AGENTS,
-    ICON_KNOWLEDGE,
-    ICON_ARCHITECTURE,
-    ICON_SECURITY,
-)
-
 
 _LAYERS = [
     {
-        "icon": ICON_AGENTS,
-        "title": "Reasoning & Agent Orchestration",
+        "n": "01",
+        "title": "Reasoning &amp; Agent Orchestration",
         "desc": (
             "A coordinated set of specialized agents &mdash; reasoning, "
             "architecture, planning, and proposal generation &mdash; each "
@@ -24,7 +17,7 @@ _LAYERS = [
         ),
     },
     {
-        "icon": ICON_KNOWLEDGE,
+        "n": "02",
         "title": "Enterprise Knowledge Layer",
         "desc": (
             "Retrieval over your own product documentation, prior deals, "
@@ -34,8 +27,8 @@ _LAYERS = [
         ),
     },
     {
-        "icon": ICON_ARCHITECTURE,
-        "title": "Architecture & Planning Engines",
+        "n": "03",
+        "title": "Architecture &amp; Planning Engines",
         "desc": (
             "Purpose-built engines for architecture recommendation, POC "
             "scoping, implementation planning, and demo planning &mdash; "
@@ -44,8 +37,8 @@ _LAYERS = [
         ),
     },
     {
-        "icon": ICON_SECURITY,
-        "title": "Security & Governance",
+        "n": "04",
+        "title": "Security &amp; Governance",
         "desc": (
             "Every recommendation is auditable and reviewable. Data stays "
             "inside your environment, and every automated step keeps a "
@@ -60,7 +53,7 @@ def render_technology_content():
     cards_html = "".join(
         f"""
         <div class="kf-card">
-            <div class="kf-card-icon">{layer['icon']}</div>
+            <div class="kf-card-number">{layer['n']}</div>
             <div class="kf-card-title">{layer['title']}</div>
             <div class="kf-card-desc">{layer['desc']}</div>
         </div>

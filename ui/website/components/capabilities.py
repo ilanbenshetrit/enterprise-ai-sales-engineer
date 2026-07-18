@@ -4,21 +4,10 @@ Kubeforge Platform Page — Capability Pipeline
 
 import streamlit as st
 
-from components.icons import (
-    ICON_OPPORTUNITY,
-    ICON_ARCHITECTURE,
-    ICON_POC,
-    ICON_IMPLEMENTATION,
-    ICON_DEMO,
-    ICON_PACKAGE,
-    ICON_KNOWLEDGE,
-)
-
 
 _STAGES = [
     {
         "n": "01",
-        "icon": ICON_OPPORTUNITY,
         "title": "Opportunity Intelligence",
         "desc": (
             "Kubeforge ingests customer and deal context to surface signal "
@@ -29,7 +18,6 @@ _STAGES = [
     },
     {
         "n": "02",
-        "icon": ICON_ARCHITECTURE,
         "title": "Architecture Recommendation",
         "desc": (
             "Given a customer's existing stack and requirements, the "
@@ -40,7 +28,6 @@ _STAGES = [
     },
     {
         "n": "03",
-        "icon": ICON_POC,
         "title": "POC Planning",
         "desc": (
             "Kubeforge scopes proof-of-concept plans automatically: success "
@@ -50,7 +37,6 @@ _STAGES = [
     },
     {
         "n": "04",
-        "icon": ICON_DEMO,
         "title": "Demo Intelligence",
         "desc": (
             "The platform plans demos tailored to each prospect's "
@@ -60,7 +46,6 @@ _STAGES = [
     },
     {
         "n": "05",
-        "icon": ICON_IMPLEMENTATION,
         "title": "Implementation Planning",
         "desc": (
             "Once a deal is won, the platform generates a delivery roadmap "
@@ -70,7 +55,6 @@ _STAGES = [
     },
     {
         "n": "06",
-        "icon": ICON_PACKAGE,
         "title": "Solution Package Generation",
         "desc": (
             "Every engagement compiles into a complete solution package "
@@ -86,10 +70,7 @@ def render_capabilities():
     cards_html = "".join(
         f"""
         <a class="kf-cap-card" href="/demo" target="_self">
-            <div class="kf-cap-top">
-                <div class="kf-cap-icon">{stage['icon']}</div>
-                <div class="kf-cap-number">{stage['n']}</div>
-            </div>
+            <div class="kf-cap-number">{stage['n']}</div>
             <div class="kf-cap-title">{stage['title']}</div>
             <div class="kf-cap-desc">{stage['desc']}</div>
             <div class="kf-cap-link">View it live &rarr;</div>
@@ -116,7 +97,7 @@ def render_capabilities():
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 18px;
-            padding: 28px;
+            padding: 30px;
             transition: 0.3s;
             text-decoration: none;
             color: inherit;
@@ -125,23 +106,14 @@ def render_capabilities():
             transform: translateY(-6px);
             border-color: rgba(56,189,248,0.4);
         }}
-        .kf-cap-link {{
-            margin-top: 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #38bdf8;
-        }}
-        .kf-cap-top {{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 14px;
-        }}
         .kf-cap-number {{
-            font-size: 14px;
-            font-weight: 700;
-            color: rgba(255,255,255,0.3);
-            letter-spacing: 1px;
+            font-size: 34px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+            line-height: 1;
         }}
         .kf-cap-title {{
             font-size: 18px;
@@ -154,10 +126,13 @@ def render_capabilities():
             line-height: 1.7;
             color: rgba(255,255,255,0.68);
         }}
+        .kf-cap-link {{
+            margin-top: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #38bdf8;
+        }}
         .kf-knowledge-band {{
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 18px;
@@ -181,16 +156,13 @@ def render_capabilities():
                 {cards_html}
             </div>
             <div class="kf-knowledge-band">
-                <div>{ICON_KNOWLEDGE}</div>
-                <div>
-                    <div class="kf-knowledge-title">Built on an Enterprise Knowledge Layer</div>
-                    <div class="kf-knowledge-desc">
-                    Every stage above is powered by retrieval-augmented
-                    reasoning over your own product documentation, prior
-                    deals, and technical collateral &mdash; so recommendations
-                    are grounded in your business, not a generic model
-                    response.
-                    </div>
+                <div class="kf-knowledge-title">Built on an Enterprise Knowledge Layer</div>
+                <div class="kf-knowledge-desc">
+                Every stage above is powered by retrieval-augmented
+                reasoning over your own product documentation, prior
+                deals, and technical collateral &mdash; so recommendations
+                are grounded in your business, not a generic model
+                response.
                 </div>
             </div>
         </div>

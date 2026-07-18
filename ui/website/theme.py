@@ -114,8 +114,14 @@ def apply_theme():
             transform: translateY(-6px);
             border-color: rgba(56,189,248,0.4);
         }
-        .kf-card-icon {
-            margin-bottom: 16px;
+        .kf-card-number {
+            font-size: 34px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 14px;
+            line-height: 1;
         }
         .kf-card-title {
             font-size: 18px;

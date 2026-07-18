@@ -4,8 +4,6 @@ Kubeforge Contact Page Content
 
 import streamlit as st
 
-from components.icons import ICON_MAIL, ICON_BUILDING
-
 
 def render_contact_content():
 
@@ -32,20 +30,19 @@ def render_contact_content():
             font-weight: 600 !important;
         }
         .kf-contact-info-item {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
-        .kf-contact-info-title {
-            font-size: 15px;
+        .kf-contact-info-label {
+            color: #38bdf8;
+            font-size: 12px;
             font-weight: 700;
-            color: white;
-            margin-bottom: 4px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
         }
         .kf-contact-info-desc {
-            font-size: 14px;
-            color: rgba(255,255,255,0.65);
+            font-size: 15px;
+            color: rgba(255,255,255,0.85);
             line-height: 1.6;
         }
         </style>
@@ -65,21 +62,15 @@ def render_contact_content():
 
     with info_col:
         st.markdown(
-            f"""
+            """
             <div class="kf-contact-info-item">
-                <div>{ICON_MAIL}</div>
-                <div>
-                    <div class="kf-contact-info-title">General Inquiries</div>
-                    <div class="kf-contact-info-desc">hello@kubeforge.ai</div>
-                </div>
+                <div class="kf-contact-info-label">General Inquiries</div>
+                <div class="kf-contact-info-desc">hello@kubeforge.ai</div>
             </div>
             <div class="kf-contact-info-item">
-                <div>{ICON_BUILDING}</div>
-                <div>
-                    <div class="kf-contact-info-title">Headquarters</div>
-                    <div class="kf-contact-info-desc">San Francisco, CA<br>
-                    Engineering hubs in Tel Aviv and Berlin</div>
-                </div>
+                <div class="kf-contact-info-label">Headquarters</div>
+                <div class="kf-contact-info-desc">San Francisco, CA<br>
+                Engineering hubs in Tel Aviv and Berlin</div>
             </div>
             """,
             unsafe_allow_html=True
