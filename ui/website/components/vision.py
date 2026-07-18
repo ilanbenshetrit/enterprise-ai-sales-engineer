@@ -16,7 +16,6 @@ def render_vision():
             border-bottom: 1px solid rgba(255,255,255,0.08);
         }
         </style>
-
         <div class="kf-panel">
             <div class="kf-section" style="margin-top: 90px; margin-bottom: 90px;">
                 <div class="kf-section-label">Our Vision</div>
@@ -28,7 +27,6 @@ def render_vision():
                     existing software &mdash; AI as the operating layer that plans,
                     decides, and acts across an organization's most important
                     processes.</p>
-
                     <p>Our vision is a world where every enterprise, regardless of
                     industry or technical maturity, can deploy autonomous AI systems
                     with the same confidence, security, and control they expect from

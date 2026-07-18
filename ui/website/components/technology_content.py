@@ -78,7 +78,6 @@ def render_technology_content():
             margin-top: 40px;
         }}
         </style>
-
         <div class="kf-section">
             <div class="kf-section-label">Technology</div>
             <div class="kf-section-title">Built for Production, Not Demos</div>

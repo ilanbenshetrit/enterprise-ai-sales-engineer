@@ -44,7 +44,6 @@ def render_cta():
             box-shadow: 0 20px 40px rgba(56,189,248,0.35);
         }
         </style>
-
         <div class="kf-cta">
             <div class="kf-cta-title">See the Platform Behind the Story</div>
             <div class="kf-cta-desc">Kubeforge's automation platform is already live

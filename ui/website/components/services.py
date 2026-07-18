@@ -63,7 +63,6 @@ def render_services():
             font-size: 14px;
         }}
         </style>
-
         <div class="kf-section">
             <div class="kf-section-label">What We Do</div>
             <div class="kf-section-title">Enterprise AI Automation, Engineered for Production</div>
@@ -72,7 +71,6 @@ def render_services():
                 systems for enterprises that need more than a proof of concept.
                 Our work spans four core disciplines:</p>
             </div>
-
             <div class="kf-services-grid">
                 <div class="kf-service-card">
                     <div class="kf-service-icon">{ICON_AUTOMATION}</div>
@@ -110,7 +108,6 @@ def render_services():
                     stack.</div>
                 </div>
             </div>
-
             <div class="kf-industries">
                 <div class="kf-industry-tag">Financial Services</div>
                 <div class="kf-industry-tag">Healthcare &amp; Life Sciences</div>

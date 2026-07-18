@@ -49,7 +49,6 @@ def render_contact_content():
             line-height: 1.6;
         }
         </style>
-
         <div class="kf-section" style="margin-bottom:60px;">
             <div class="kf-section-label">Contact</div>
             <div class="kf-section-title">Let's Talk About Your Next Deal</div>

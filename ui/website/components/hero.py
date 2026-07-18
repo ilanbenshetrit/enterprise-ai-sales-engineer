@@ -116,21 +116,17 @@ def render_hero():
         }}
 
         </style>
-
         <section class="hero">
-
             <div class="hero-title">
                 <span class="hero-gradient">Building The Future</span>
                 <br>
                 Of Intelligent Enterprise Automation
             </div>
-
             <div class="hero-description">
                 Kubeforge delivers advanced AI-driven automation capabilities
                 that help organizations transform complex processes into
                 secure, intelligent, and scalable digital environments.
             </div>
-
             <div>
                 <a class="hero-button" href="/platform" target="_self">Explore Platform</a>
                 <a class="hero-button-outline" href="/contact" target="_self">Contact Us</a>

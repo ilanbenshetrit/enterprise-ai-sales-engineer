@@ -37,7 +37,6 @@ def render_platform_hero():
             color: rgba(255,255,255,0.8);
         }
         </style>
-
         <div class="kf-platform-hero">
             <div class="kf-platform-eyebrow">The Kubeforge Platform</div>
             <div class="kf-platform-title">

@@ -33,7 +33,6 @@ def render_stats():
             text-transform: uppercase;
         }
         </style>
-
         <div class="kf-stats">
             <div class="kf-stat">
                 <div class="kf-stat-number">50+</div>

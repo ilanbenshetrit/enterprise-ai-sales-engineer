@@ -176,12 +176,10 @@ def render_capabilities():
             color: rgba(255,255,255,0.7);
         }}
         </style>
-
         <div class="kf-section">
             <div class="kf-cap-grid">
                 {cards_html}
             </div>
-
             <div class="kf-knowledge-band">
                 <div>{ICON_KNOWLEDGE}</div>
                 <div>

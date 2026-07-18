@@ -17,11 +17,9 @@ def render_footer():
             <div style="display:flex; justify-content:center; margin-bottom:16px;">
                 {kf_logo_lockup(size=32, wordmark_size="22px")}
             </div>
-
             <p style="color:#94a3b8; font-size:16px; margin:0 0 16px;">
             Enterprise AI Automation Platform
             </p>
-
             <p style="color:#94a3b8; font-size:15px;">
             <a href="/platform" target="_self" style="color:#94a3b8; text-decoration:none;">Platform</a>
             &nbsp;|&nbsp;
@@ -31,7 +29,6 @@ def render_footer():
             &nbsp;|&nbsp;
             <a href="/company" target="_self" style="color:#94a3b8; text-decoration:none;">Careers</a>
             </p>
-
             <p style="color:#64748b; font-size:14px; margin-top:16px;">
             &copy; 2026 Kubeforge. All rights reserved.
             </p>

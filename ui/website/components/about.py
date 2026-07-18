@@ -38,7 +38,6 @@ def render_about():
             margin-bottom: 20px;
         }
         </style>
-
         <div class="kf-section">
             <div class="kf-section-label">Our Story</div>
             <div class="kf-section-title">From Research Lab to Enterprise Infrastructure</div>
@@ -49,13 +48,11 @@ def render_about():
                 watching the same pattern play out: brilliant proof-of-concepts that
                 never survived contact with legacy systems, compliance requirements, or
                 the operational complexity of a real enterprise.</p>
-
                 <p>We started Kubeforge to close that gap. Not another AI demo. Not
                 another chatbot wrapper. A platform engineered from day one to take AI
                 out of the sandbox and into production &mdash; inside the messy,
                 regulated, mission-critical environments where enterprises actually
                 operate.</p>
-
                 <p>Since our first deployment inside a regional financial institution's
                 claims processing pipeline, Kubeforge has grown from a three-person
                 engineering team into a global partner trusted by enterprises across

@@ -47,7 +47,6 @@ def render_header():
             box-shadow: 0 15px 30px rgba(56,189,248,0.35);
         }}
         </style>
-
         <div class="kf-header">
             {kf_logo_lockup()}
             <div class="kf-menu">
