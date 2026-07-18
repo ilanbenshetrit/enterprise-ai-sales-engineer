@@ -53,6 +53,10 @@ from company_page import render_company
 from contact_page import render_contact
 from security_platform import render_security_platform
 from security_integrations import render_security_integrations
+from security_scanning import render_security_scanning
+from security_posture import render_security_posture
+from security_copilot import render_security_copilot
+from security_alerting import render_security_alerting
 
 from app.ui.dashboard import render_dashboard
 
@@ -74,6 +78,10 @@ pages = [
     st.Page(render_company, title="Company", url_path="company"),
     st.Page(render_contact, title="Contact", url_path="contact"),
     st.Page(render_security_integrations, title="Security Integrations", url_path="security-integrations"),
+    st.Page(render_security_scanning, title="Continuous Scanning", url_path="security-scanning"),
+    st.Page(render_security_posture, title="Posture & Risk Analysis", url_path="security-posture"),
+    st.Page(render_security_copilot, title="AI Copilot Triage", url_path="security-copilot"),
+    st.Page(render_security_alerting, title="Alerting & Remediation", url_path="security-alerting"),
 ]
 
 nav = st.navigation(pages, position="hidden")

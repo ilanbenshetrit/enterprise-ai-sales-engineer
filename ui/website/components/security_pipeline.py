@@ -15,6 +15,7 @@ _STAGES = [
             "running continuously as part of the pipeline, not as a "
             "point-in-time audit."
         ),
+        "href": "/security-scanning",
     },
     {
         "n": "02",
@@ -24,6 +25,7 @@ _STAGES = [
             "and cloud security posture (CSPM) view, so teams see risk "
             "ranked by actual exposure, not just a raw findings count."
         ),
+        "href": "/security-posture",
     },
     {
         "n": "03",
@@ -33,6 +35,7 @@ _STAGES = [
             "plain language and get grounded answers &mdash; what changed, "
             "why it matters, and what to fix first."
         ),
+        "href": "/security-copilot",
     },
     {
         "n": "04",
@@ -42,6 +45,7 @@ _STAGES = [
             "Slack alerting wired into the same pipeline that triggered "
             "the scan, closing the loop from detection to action."
         ),
+        "href": "/security-alerting",
     },
 ]
 
@@ -50,11 +54,12 @@ def render_security_pipeline():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
+        <a class="kf-stage-card" href="{stage['href']}" target="_self">
             <div class="kf-card-number">{stage['n']}</div>
             <div class="kf-card-title">{stage['title']}</div>
             <div class="kf-card-desc">{stage['desc']}</div>
-        </div>
+            <div class="kf-stage-card-link">Explore this stage &rarr;</div>
+        </a>
         """
         for stage in _STAGES
     )
