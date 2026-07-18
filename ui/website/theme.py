@@ -47,9 +47,9 @@ def apply_theme():
 
 
         .kf-tagline {
-            font-size: 10px;
+            font-size: 13px;
             font-weight: 700;
-            letter-spacing: 2.5px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
             -webkit-background-clip: text;

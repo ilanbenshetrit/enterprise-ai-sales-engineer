@@ -128,27 +128,22 @@ def render_header():
         }}
         .kf-header {{
             width: 100%;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 20px 0px;
+            gap: 56px;
+            padding: 24px 0px;
             margin-bottom: 60px;
             position: relative;
             z-index: 100;
         }}
         .kf-header-logo {{
-            grid-column: 1;
-            justify-self: start;
+            flex-shrink: 0;
         }}
         .kf-menu {{
-            grid-column: 2;
-            justify-self: center;
             display: flex;
             gap: 38px;
             align-items: center;
-        }}
-        .kf-header-spacer {{
-            grid-column: 3;
         }}
         .kf-menu-item-wrap {{
             position: relative;
@@ -274,11 +269,10 @@ def render_header():
         }}
         </style>
         <div class="kf-header">
-            <div class="kf-header-logo">{kf_logo_lockup()}</div>
+            <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px")}</div>
             <div class="kf-menu">
                 {_render_mega_items()}
             </div>
-            <div class="kf-header-spacer"></div>
         </div>
         """,
         unsafe_allow_html=True
