@@ -85,14 +85,15 @@ def render_capabilities():
 
     cards_html = "".join(
         f"""
-        <div class="kf-cap-card">
+        <a class="kf-cap-card" href="/demo" target="_self">
             <div class="kf-cap-top">
                 <div class="kf-cap-icon">{stage['icon']}</div>
                 <div class="kf-cap-number">{stage['n']}</div>
             </div>
             <div class="kf-cap-title">{stage['title']}</div>
             <div class="kf-cap-desc">{stage['desc']}</div>
-        </div>
+            <div class="kf-cap-link">View it live &rarr;</div>
+        </a>
         """
         for stage in _STAGES
     )
@@ -111,15 +112,24 @@ def render_capabilities():
             margin-top: 40px;
         }}
         .kf-cap-card {{
+            display: block;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 18px;
             padding: 28px;
             transition: 0.3s;
+            text-decoration: none;
+            color: inherit;
         }}
         .kf-cap-card:hover {{
             transform: translateY(-6px);
             border-color: rgba(56,189,248,0.4);
+        }}
+        .kf-cap-link {{
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #38bdf8;
         }}
         .kf-cap-top {{
             display: flex;

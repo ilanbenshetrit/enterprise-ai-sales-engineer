@@ -107,6 +107,7 @@ def render_hero():
             background: rgba(255,255,255,0.06);
             border: 1px solid rgba(255,255,255,0.2);
             transition: 0.3s;
+            text-decoration: none;
         }}
 
         .hero-button-outline:hover {{
@@ -132,7 +133,7 @@ def render_hero():
 
             <div>
                 <a class="hero-button" href="/platform" target="_self">Explore Platform</a>
-                <div class="hero-button-outline">Contact Us</div>
+                <a class="hero-button-outline" href="/contact" target="_self">Contact Us</a>
             </div>
 
             {HERO_NETWORK_SVG}

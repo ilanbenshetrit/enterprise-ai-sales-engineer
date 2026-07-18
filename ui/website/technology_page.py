@@ -1,31 +1,29 @@
 """
-Kubeforge Platform Page
+Kubeforge Technology Page
 """
 
 import streamlit as st
 
 from theme import apply_theme
 from components.header import render_header
-from components.platform_hero import render_platform_hero
-from components.capabilities import render_capabilities
+from components.technology_content import render_technology_content
 from components.footer import render_footer
 
 
-def render_platform():
+def render_technology():
 
     apply_theme()
 
     render_header()
-    render_platform_hero()
-    render_capabilities()
+    render_technology_content()
 
     st.markdown(
         """
         <div class="kf-cta">
-            <div class="kf-cta-title">Ready to Put This on Your Next Deal?</div>
+            <div class="kf-cta-title">See the Engine Run</div>
             <div class="kf-cta-desc">
-            Every stage above is running real product code. See it work end
-            to end on a live opportunity.
+            The clearest way to understand the architecture is to watch it
+            work on a real opportunity.
             </div>
             <a class="kf-cta-button" href="/demo" target="_self">View the Live Platform</a>
         </div>

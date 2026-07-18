@@ -70,3 +70,25 @@ ICON_PACKAGE = _icon(
     '<path d="M3 8v8l9 5 9-5V8"/>'
     '<line x1="12" y1="13" x2="12" y2="21"/>'
 )
+
+ICON_SECURITY = _icon(
+    '<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/>'
+    '<polyline points="9 12 11 14 15 10"/>'
+)
+
+ICON_MAIL = _icon(
+    '<rect x="3" y="5" width="18" height="14" rx="2"/>'
+    '<polyline points="3 7 12 13 21 7"/>'
+)
+
+ICON_BUILDING = _icon(
+    '<rect x="4" y="3" width="16" height="18" rx="1"/>'
+    '<line x1="9" y1="7" x2="9" y2="7"/>'
+    '<line x1="15" y1="7" x2="15" y2="7"/>'
+    '<line x1="9" y1="11" x2="9" y2="11"/>'
+    '<line x1="15" y1="11" x2="15" y2="11"/>'
+    '<line x1="9" y1="15" x2="9" y2="15"/>'
+    '<line x1="15" y1="15" x2="15" y2="15"/>'
+    '<line x1="10" y1="21" x2="10" y2="18"/>'
+    '<line x1="14" y1="21" x2="14" y2="18"/>'
+)

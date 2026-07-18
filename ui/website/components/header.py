@@ -52,10 +52,10 @@ def render_header():
             {kf_logo_lockup()}
             <div class="kf-menu">
                 <a class="kf-item" href="/platform" target="_self">Platform</a>
-                <div class="kf-item">Solutions</div>
-                <div class="kf-item">Technology</div>
-                <div class="kf-item">Company</div>
-                <div class="kf-item">Contact</div>
+                <a class="kf-item" href="/solutions" target="_self">Solutions</a>
+                <a class="kf-item" href="/technology" target="_self">Technology</a>
+                <a class="kf-item" href="/company" target="_self">Company</a>
+                <a class="kf-item" href="/contact" target="_self">Contact</a>
             </div>
         </div>
         """,
