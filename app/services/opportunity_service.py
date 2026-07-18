@@ -1,4 +1,5 @@
 from app.models.opportunity import Opportunity
+from app.database.database import Database
 
 
 
@@ -9,6 +10,8 @@ class OpportunityService:
 
         self.opportunities = {}
 
+        self.database = Database()
+
 
 
     def create(
@@ -17,6 +20,7 @@ class OpportunityService:
         title,
         description=""
     ):
+
 
         opportunity = Opportunity(
             customer_name,
@@ -28,6 +32,37 @@ class OpportunityService:
         self.opportunities[
             opportunity.id
         ] = opportunity
+
+
+
+        self.database.execute(
+            """
+            INSERT INTO opportunities
+            (
+                id,
+                customer_id,
+                title,
+                description,
+                created_at
+            )
+
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?,
+                ?
+            )
+            """,
+            (
+                opportunity.id,
+                None,
+                opportunity.title,
+                opportunity.description,
+                opportunity.created_at.isoformat()
+            )
+        )
 
 
         return opportunity
@@ -57,11 +92,27 @@ class OpportunityService:
 
 
         if not opportunity:
+
             return None
 
 
         opportunity.set_customer(
             customer
+        )
+
+
+        self.database.execute(
+            """
+            UPDATE opportunities
+
+            SET customer_id = ?
+
+            WHERE id = ?
+            """,
+            (
+                customer.id,
+                opportunity_id
+            )
         )
 
 
@@ -81,6 +132,7 @@ class OpportunityService:
 
 
         if not opportunity:
+
             return None
 
 
@@ -105,6 +157,7 @@ class OpportunityService:
 
 
         if not opportunity:
+
             return None
 
 
@@ -117,7 +170,9 @@ class OpportunityService:
 
 
 
-    def list_all(self):
+    def list_all(
+        self
+    ):
 
         return [
 

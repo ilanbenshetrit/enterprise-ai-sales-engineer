@@ -1,4 +1,7 @@
+from datetime import datetime
+
 from app.models.customer import Customer
+from app.database.database import Database
 
 
 
@@ -9,6 +12,8 @@ class CustomerService:
 
         self.customers = {}
 
+        self.database = Database()
+
 
 
     def create(
@@ -17,6 +22,7 @@ class CustomerService:
         industry="",
         size=""
     ):
+
 
         customer = Customer(
             name,
@@ -28,6 +34,37 @@ class CustomerService:
         self.customers[
             customer.id
         ] = customer
+
+
+
+        self.database.execute(
+            """
+            INSERT INTO customers
+            (
+                id,
+                name,
+                industry,
+                size,
+                created_at
+            )
+
+            VALUES
+            (
+                ?,
+                ?,
+                ?,
+                ?,
+                ?
+            )
+            """,
+            (
+                customer.id,
+                customer.name,
+                customer.industry,
+                customer.size,
+                customer.created_at.isoformat()
+            )
+        )
 
 
         return customer
@@ -45,6 +82,58 @@ class CustomerService:
 
 
 
+    def load_all(
+        self
+    ):
+
+        rows = self.database.fetch_all(
+            """
+            SELECT
+                id,
+                name,
+                industry,
+                size,
+                created_at
+
+            FROM customers
+            """
+        )
+
+
+        customers = []
+
+
+        for row in rows:
+
+            customer = Customer(
+                row[1],
+                row[2],
+                row[3]
+            )
+
+
+            customer.id = row[0]
+
+
+            customer.created_at = datetime.fromisoformat(
+                row[4]
+            )
+
+
+            self.customers[
+                customer.id
+            ] = customer
+
+
+            customers.append(
+                customer
+            )
+
+
+        return customers
+
+
+
     def set_environment(
         self,
         customer_id,
@@ -57,6 +146,7 @@ class CustomerService:
 
 
         if not customer:
+
             return None
 
 
@@ -81,6 +171,7 @@ class CustomerService:
 
 
         if not customer:
+
             return None
 
 
@@ -105,6 +196,7 @@ class CustomerService:
 
 
         if not customer:
+
             return None
 
 
@@ -129,6 +221,7 @@ class CustomerService:
 
 
         if not customer:
+
             return None
 
 
@@ -141,7 +234,9 @@ class CustomerService:
 
 
 
-    def list_all(self):
+    def list_all(
+        self
+    ):
 
         return [
 

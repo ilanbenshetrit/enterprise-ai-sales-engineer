@@ -4,6 +4,7 @@ from app.planning.poc_planner import POCPlanner
 from app.implementation.implementation_planner import ImplementationPlanner
 from app.demo.demo_planner import DemoPlanner
 from app.proposal.proposal_generator import ProposalGenerator
+from app.services.intelligence_service import IntelligenceService
 
 
 
@@ -17,8 +18,10 @@ class OpportunityIntelligence:
         poc_planner=None,
         implementation_planner=None,
         demo_planner=None,
-        proposal_generator=None
+        proposal_generator=None,
+        intelligence_service=None
     ):
+
 
         self.reasoning_engine = (
             reasoning_engine
@@ -59,6 +62,13 @@ class OpportunityIntelligence:
             proposal_generator
             if proposal_generator
             else ProposalGenerator()
+        )
+
+
+        self.intelligence_service = (
+            intelligence_service
+            if intelligence_service
+            else IntelligenceService()
         )
 
 
@@ -117,8 +127,6 @@ class OpportunityIntelligence:
         )
 
 
-        # AI reasoning analysis
-
         analysis = self.reasoning_engine.analyze(
             context
         )
@@ -129,8 +137,6 @@ class OpportunityIntelligence:
         )
 
 
-        # Architecture recommendation
-
         architecture = self.architecture_engine.recommend(
             context
         )
@@ -140,8 +146,6 @@ class OpportunityIntelligence:
             architecture
         )
 
-
-        # POC planning
 
         poc_context = {
 
@@ -162,8 +166,6 @@ class OpportunityIntelligence:
         )
 
 
-        # Implementation planning
-
         implementation_context = {
 
             "solution": architecture,
@@ -182,8 +184,6 @@ class OpportunityIntelligence:
             implementation_plan
         )
 
-
-        # Demo planning
 
         demo_context = {
 
@@ -205,8 +205,6 @@ class OpportunityIntelligence:
             demo_plan
         )
 
-
-        # Proposal generation
 
         proposal_context = {
 
@@ -232,6 +230,13 @@ class OpportunityIntelligence:
 
         opportunity.set_proposal(
             proposal
+        )
+
+
+        # Save AI Intelligence Package
+
+        self.intelligence_service.save(
+            opportunity
         )
 
 

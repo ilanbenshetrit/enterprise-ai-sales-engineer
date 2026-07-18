@@ -1,0 +1,11 @@
+.
+./__pycache__
+./app.py
+./components
+./components/__pycache__
+./components/footer.py
+./components/header.py
+./components/hero.py
+./home.py
+./project_inventory.txt
+./theme.py
