@@ -9,6 +9,7 @@ demo plan, proposal). Rendered as a page inside the marketing site.
 
 import streamlit as st
 
+from app.ui.components.theme import apply_dashboard_theme
 from app.ui.components.sidebar import render_sidebar
 from app.ui.components.intelligence_view import render_intelligence_package
 
@@ -40,6 +41,8 @@ _PAGE_ROUTES = {
 
 def render_dashboard():
 
+    apply_dashboard_theme()
+
     st.markdown(
         '<a href="/platform" target="_self" '
         'style="color:#38bdf8; text-decoration:none; font-size:14px;">'
@@ -61,7 +64,7 @@ def render_dashboard():
 
     data = service.get_dashboard_data()
 
-    st.title("🚀 Kubeforge")
+    st.title("Kubeforge")
     st.subheader("Enterprise AI Sales Engineer Platform")
     st.divider()
 

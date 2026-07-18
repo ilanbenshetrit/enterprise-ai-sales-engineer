@@ -7,7 +7,7 @@ from app.services.intelligence_service import IntelligenceService
 
 def render():
 
-    st.title("📊 Reports")
+    st.title("Reports")
 
     st.subheader("Pipeline Activity")
 

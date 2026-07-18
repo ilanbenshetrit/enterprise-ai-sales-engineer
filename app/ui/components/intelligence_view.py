@@ -56,10 +56,10 @@ def render_intelligence_package(data, show_customer=True):
         st.success(architecture.get("deployment_model"))
 
     for component in architecture.get("components", []):
-        st.write("✅ " + component)
+        st.write("– " + component)
 
     for control in architecture.get("security_controls", []):
-        st.write("🔒 " + control)
+        st.write("– " + control)
 
     st.divider()
 
@@ -71,10 +71,10 @@ def render_intelligence_package(data, show_customer=True):
         st.write("Duration:", poc.get("duration"))
 
     for test in poc.get("test_cases", []):
-        st.write("✔ " + test)
+        st.write("– " + test)
 
     for criterion in poc.get("success_criteria", []):
-        st.write("🎯 " + criterion)
+        st.write("– " + criterion)
 
     st.divider()
 
@@ -84,9 +84,9 @@ def render_intelligence_package(data, show_customer=True):
 
     for phase in implementation.get("phases", []):
         if isinstance(phase, dict):
-            st.write("➡️ " + phase.get("name", phase.get("phase", str(phase))))
+            st.write("– " + phase.get("name", phase.get("phase", str(phase))))
         else:
-            st.write("➡️ " + phase)
+            st.write("– " + phase)
 
     st.divider()
 

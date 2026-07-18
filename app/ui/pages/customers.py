@@ -8,7 +8,7 @@ def render():
 
 
     st.title(
-        "👥 Customers"
+        "Customers"
     )
 
 

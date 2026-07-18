@@ -8,7 +8,7 @@ from app.knowledge.service import KnowledgeService
 
 def render():
 
-    st.title("⚙ Settings")
+    st.title("Settings")
 
     st.subheader("Platform Configuration")
 

@@ -7,11 +7,11 @@ from app.ui.components.intelligence_view import render_intelligence_package
 
 def render():
 
-    st.title("💼 Opportunities")
+    st.title("Opportunities")
 
     st.subheader("Run and Review Opportunity Intelligence")
 
-    with st.expander("➕ Run New Opportunity Analysis", expanded=False):
+    with st.expander("Run New Opportunity Analysis", expanded=False):
 
         with st.form("kf_new_opportunity_form"):
 

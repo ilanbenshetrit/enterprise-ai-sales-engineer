@@ -7,23 +7,23 @@ def render_sidebar():
 
     pages = {
 
-        "🏠 Dashboard": "dashboard",
+        "Dashboard": "dashboard",
 
-        "👥 Customers": "customers",
+        "Customers": "customers",
 
-        "💼 Opportunities": "opportunities",
+        "Opportunities": "opportunities",
 
-        "📄 RFP Analyzer": "rfp_analyzer",
+        "RFP Analyzer": "rfp_analyzer",
 
-        "🧠 AI Assistant": "ai_assistant",
+        "AI Assistant": "ai_assistant",
 
-        "🏗 Architecture": "architecture",
+        "Architecture": "architecture",
 
-        "🧪 POC Builder": "poc_builder",
+        "POC Builder": "poc_builder",
 
-        "📊 Reports": "reports",
+        "Reports": "reports",
 
-        "⚙ Settings": "settings"
+        "Settings": "settings"
 
     }
 
@@ -33,7 +33,7 @@ def render_sidebar():
 
 
         st.title(
-            "🚀 AI Sales Engineer"
+            "AI Sales Engineer"
         )
 
 

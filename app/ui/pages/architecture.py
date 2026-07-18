@@ -5,7 +5,7 @@ from app.services.intelligence_service import IntelligenceService
 
 def render():
 
-    st.title("🏗 Architecture")
+    st.title("Architecture")
 
     st.subheader("Architecture Recommendation Engine")
 
@@ -47,12 +47,12 @@ def render():
     with col1:
         st.subheader("Components")
         for component in architecture.get("components", []):
-            st.write("✅ " + component)
+            st.write("– " + component)
 
     with col2:
         st.subheader("Security Controls")
         for control in architecture.get("security_controls", []):
-            st.write("🔒 " + control)
+            st.write("– " + control)
 
     st.divider()
 
@@ -62,4 +62,4 @@ def render():
 
     st.subheader("Implementation Steps")
     for step in solution.get("implementation_plan", []):
-        st.write("➡️ " + step)
+        st.write("– " + step)

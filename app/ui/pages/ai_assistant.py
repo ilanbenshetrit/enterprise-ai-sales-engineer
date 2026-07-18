@@ -5,7 +5,7 @@ from app.knowledge.service import KnowledgeService
 
 def render():
 
-    st.title("🧠 AI Assistant")
+    st.title("AI Assistant")
 
     st.subheader("Search the Enterprise Knowledge Base")
 

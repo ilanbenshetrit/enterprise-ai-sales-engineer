@@ -6,7 +6,7 @@ from app.ui.components.intelligence_view import render_intelligence_package
 
 def render():
 
-    st.title("📄 RFP Analyzer")
+    st.title("RFP Analyzer")
 
     st.subheader("Turn RFP Requirements Into a Full Intelligence Package")
 

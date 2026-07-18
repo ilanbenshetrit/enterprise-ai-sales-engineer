@@ -5,7 +5,7 @@ from app.services.intelligence_service import IntelligenceService
 
 def render():
 
-    st.title("🧪 POC Builder")
+    st.title("POC Builder")
 
     st.subheader("Proof-of-Concept Planning Engine")
 
@@ -43,13 +43,13 @@ def render():
 
         st.subheader("Test Cases")
         for test in poc.get("test_cases", []):
-            st.write("✔ " + test)
+            st.write("– " + test)
 
     with col2:
         st.subheader("Success Criteria")
         for criterion in poc.get("success_criteria", []):
-            st.write("🎯 " + criterion)
+            st.write("– " + criterion)
 
         st.subheader("Required Resources")
         for resource in poc.get("required_resources", []):
-            st.write("👤 " + resource)
+            st.write("– " + resource)
