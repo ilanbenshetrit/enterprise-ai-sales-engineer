@@ -34,7 +34,7 @@ def render_cta():
             font-size: 17px;
             font-weight: 600;
             color: white;
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
             transition: 0.3s;
             margin-bottom: 80px;
             text-decoration: none;

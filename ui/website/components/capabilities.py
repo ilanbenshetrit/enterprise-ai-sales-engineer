@@ -109,7 +109,7 @@ def render_capabilities():
         .kf-cap-number {{
             font-size: 34px;
             font-weight: 800;
-            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 14px;

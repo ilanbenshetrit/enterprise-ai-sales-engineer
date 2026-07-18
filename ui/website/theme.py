@@ -52,7 +52,8 @@ def apply_theme():
             linear-gradient(
                 90deg,
                 #c084fc,
-                #38bdf8
+                #38bdf8,
+                #34d399
             );
 
             -webkit-background-clip:
@@ -117,7 +118,7 @@ def apply_theme():
         .kf-card-number {
             font-size: 34px;
             font-weight: 800;
-            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 14px;
@@ -158,7 +159,7 @@ def apply_theme():
             font-size: 17px;
             font-weight: 600;
             color: white;
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
             transition: 0.3s;
             margin-bottom: 80px;
             text-decoration: none;
@@ -308,7 +309,7 @@ def apply_theme():
         .kf-score-value {
             font-size: 36px;
             font-weight: 800;
-            background: linear-gradient(90deg, #c084fc, #38bdf8);
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 8px;
@@ -337,7 +338,7 @@ def apply_theme():
         }
         .kf-chat-user {
             align-self: flex-end;
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
             color: white;
             border-bottom-right-radius: 4px;
         }

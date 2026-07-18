@@ -11,7 +11,8 @@ HERO_NETWORK_SVG = """
     <defs>
         <linearGradient id="heroNetGrad" x1="0" y1="0" x2="800" y2="0">
             <stop offset="0" stop-color="#c084fc"/>
-            <stop offset="1" stop-color="#38bdf8"/>
+            <stop offset="0.5" stop-color="#38bdf8"/>
+            <stop offset="1" stop-color="#34d399"/>
         </linearGradient>
     </defs>
     <g stroke="url(#heroNetGrad)" stroke-width="1" opacity="0.35">
@@ -65,7 +66,7 @@ def render_hero():
         }}
 
         .hero-gradient {{
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }}
@@ -86,7 +87,7 @@ def render_hero():
             font-size: 18px;
             font-weight: 600;
             color: white;
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8);
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
             transition: 0.3s;
             text-decoration: none;
         }}

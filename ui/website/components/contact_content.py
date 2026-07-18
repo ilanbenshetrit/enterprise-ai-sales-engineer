@@ -22,7 +22,7 @@ def render_contact_content():
             color: rgba(255,255,255,0.75) !important;
         }
         [data-testid="stFormSubmitButton"] button {
-            background: linear-gradient(90deg,#8b5cf6,#38bdf8) !important;
+            background: linear-gradient(90deg,#8b5cf6,#38bdf8,#34d399) !important;
             color: white !important;
             border: none !important;
             border-radius: 14px !important;

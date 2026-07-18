@@ -15,7 +15,8 @@ def kf_logo_svg(size: int = 40) -> str:
         <defs>
             <linearGradient id="kfLogoGrad" x1="0" y1="0" x2="40" y2="40">
                 <stop offset="0" stop-color="#c084fc"/>
-                <stop offset="1" stop-color="#38bdf8"/>
+                <stop offset="0.5" stop-color="#38bdf8"/>
+                <stop offset="1" stop-color="#34d399"/>
             </linearGradient>
         </defs>
         <polygon points="34.7,28.5 20,37 5.3,28.5 5.3,11.5 20,3 34.7,11.5"
