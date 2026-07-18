@@ -181,3 +181,56 @@ class OpportunityService:
             for opportunity in self.opportunities.values()
 
         ]
+
+
+
+    def load_all(
+        self
+    ):
+        """
+        Read persisted opportunities from the database, joined with
+        their customer record. Unlike list_all(), this survives
+        across service instances/reruns.
+        """
+
+        rows = self.database.fetch_all(
+            """
+            SELECT
+                opportunities.id,
+                opportunities.title,
+                opportunities.description,
+                opportunities.created_at,
+                customers.id,
+                customers.name,
+                customers.industry,
+                customers.size
+
+            FROM opportunities
+
+            LEFT JOIN customers
+                ON opportunities.customer_id = customers.id
+
+            ORDER BY opportunities.created_at DESC
+            """
+        )
+
+        results = []
+
+        for row in rows:
+
+            results.append(
+                {
+                    "id": row[0],
+                    "title": row[1],
+                    "description": row[2],
+                    "created_at": row[3],
+                    "customer": {
+                        "id": row[4],
+                        "name": row[5] or "Unknown",
+                        "industry": row[6] or "",
+                        "size": row[7] or "",
+                    } if row[4] else None,
+                }
+            )
+
+        return results

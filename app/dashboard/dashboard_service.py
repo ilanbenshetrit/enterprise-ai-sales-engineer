@@ -82,7 +82,8 @@ class DashboardService:
         customer_name,
         industry,
         size,
-        requirements
+        requirements,
+        title="Cyber Resilience Project"
     ):
 
 
@@ -95,7 +96,7 @@ class DashboardService:
 
         opportunity = self.opportunity_service.create(
             customer_name,
-            "Cyber Resilience Project"
+            title or "Cyber Resilience Project"
         )
 
 
