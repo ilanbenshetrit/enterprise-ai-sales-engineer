@@ -14,6 +14,7 @@ _CAPABILITIES = [
             "permissions, and exposed services against known "
             "misconfiguration patterns."
         ),
+        "href": "/security-scanning",
     },
     {
         "n": "02",
@@ -23,6 +24,7 @@ _CAPABILITIES = [
             "pipelines to catch vulnerable or compromised packages before "
             "they ship."
         ),
+        "href": "/security-scanning",
     },
     {
         "n": "03",
@@ -32,6 +34,7 @@ _CAPABILITIES = [
             "and secrets &mdash; not just the current state of the code, "
             "but everything that ever touched it."
         ),
+        "href": "/security-scanning",
     },
     {
         "n": "04",
@@ -40,6 +43,7 @@ _CAPABILITIES = [
             "Maps network-level attack surface across the environment to "
             "flag exposure that configuration reviews alone tend to miss."
         ),
+        "href": "/security-scanning",
     },
     {
         "n": "05",
@@ -49,6 +53,7 @@ _CAPABILITIES = [
             "and tracks posture over time instead of a single audit "
             "snapshot."
         ),
+        "href": "/security-posture",
     },
     {
         "n": "06",
@@ -57,6 +62,7 @@ _CAPABILITIES = [
             "Continuously checks cloud configuration against compliance "
             "and security baselines across your provider accounts."
         ),
+        "href": "/security-posture",
     },
     {
         "n": "07",
@@ -66,6 +72,7 @@ _CAPABILITIES = [
             "what changed, why it's risky, and what to do about it, and "
             "get an answer grounded in your actual environment."
         ),
+        "href": "/security-copilot",
     },
     {
         "n": "08",
@@ -74,6 +81,7 @@ _CAPABILITIES = [
             "Scans run on a schedule and on pipeline triggers, with new "
             "risk pushed straight to Slack the moment it's detected."
         ),
+        "href": "/security-alerting",
     },
 ]
 
@@ -82,11 +90,12 @@ def render_security_capabilities():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
+        <a class="kf-stage-card" href="{c['href']}" target="_self">
             <div class="kf-card-number">{c['n']}</div>
             <div class="kf-card-title">{c['title']}</div>
             <div class="kf-card-desc">{c['desc']}</div>
-        </div>
+            <div class="kf-stage-card-link">Learn more &rarr;</div>
+        </a>
         """
         for c in _CAPABILITIES
     )

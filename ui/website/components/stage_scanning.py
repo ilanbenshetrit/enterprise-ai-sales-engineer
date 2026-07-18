@@ -75,11 +75,12 @@ def render_stage_scanning():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
+        <a class="kf-stage-card" href="/security-posture" target="_self">
             <div class="kf-card-number">{s['n']}</div>
             <div class="kf-card-title">{s['title']}</div>
             <div class="kf-card-desc">{s['desc']}</div>
-        </div>
+            <div class="kf-stage-card-link">See how findings are scored &rarr;</div>
+        </a>
         """
         for s in _SCANNERS
     )

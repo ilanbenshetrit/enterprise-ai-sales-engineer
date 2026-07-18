@@ -66,11 +66,12 @@ def render_stage_posture():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
+        <a class="kf-stage-card" href="/security-copilot" target="_self">
             <div class="kf-card-number">{a['n']}</div>
             <div class="kf-card-title">{a['title']}</div>
             <div class="kf-card-desc">{a['desc']}</div>
-        </div>
+            <div class="kf-stage-card-link">See how the copilot uses this &rarr;</div>
+        </a>
         """
         for a in _AREAS
     )

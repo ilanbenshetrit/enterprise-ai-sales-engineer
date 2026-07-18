@@ -48,10 +48,11 @@ def render_security_integrations_content():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
+        <a class="kf-stage-card" href="/contact" target="_self">
             <div class="kf-card-title">{item['title']}</div>
             <div class="kf-card-desc">{item['desc']}</div>
-        </div>
+            <div class="kf-stage-card-link">Talk to us about this &rarr;</div>
+        </a>
         """
         for item in _INTEGRATIONS
     )
