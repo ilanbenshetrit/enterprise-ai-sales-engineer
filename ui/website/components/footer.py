@@ -18,10 +18,12 @@ def render_footer():
                 {kf_logo_lockup(size=32, wordmark_size="22px")}
             </div>
             <p style="color:#94a3b8; font-size:16px; margin:0 0 16px;">
-            Enterprise AI Automation Platform
+            AI Engineering &amp; Cloud-Native Security
             </p>
             <p style="color:#94a3b8; font-size:15px;">
-            <a href="/platform" target="_self" style="color:#94a3b8; text-decoration:none;">Platform</a>
+            <a href="/security" target="_self" style="color:#94a3b8; text-decoration:none;">Security Platform</a>
+            &nbsp;|&nbsp;
+            <a href="/platform" target="_self" style="color:#94a3b8; text-decoration:none;">AI Sales Engineer</a>
             &nbsp;|&nbsp;
             <a href="/company" target="_self" style="color:#94a3b8; text-decoration:none;">About Us</a>
             &nbsp;|&nbsp;

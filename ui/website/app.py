@@ -51,6 +51,8 @@ from solutions_page import render_solutions
 from technology_page import render_technology
 from company_page import render_company
 from contact_page import render_contact
+from security_platform import render_security_platform
+from security_integrations import render_security_integrations
 
 from app.ui.dashboard import render_dashboard
 
@@ -64,12 +66,14 @@ st.set_page_config(
 
 pages = [
     st.Page(render_home, title="Kubeforge", url_path="home", default=True),
-    st.Page(render_platform, title="Platform", url_path="platform"),
+    st.Page(render_security_platform, title="Security Platform", url_path="security"),
+    st.Page(render_platform, title="AI Sales Engineer", url_path="platform"),
     st.Page(render_dashboard, title="Live Platform", url_path="demo"),
     st.Page(render_solutions, title="Solutions", url_path="solutions"),
     st.Page(render_technology, title="Technology", url_path="technology"),
     st.Page(render_company, title="Company", url_path="company"),
     st.Page(render_contact, title="Contact", url_path="contact"),
+    st.Page(render_security_integrations, title="Security Integrations", url_path="security-integrations"),
 ]
 
 nav = st.navigation(pages, position="hidden")
