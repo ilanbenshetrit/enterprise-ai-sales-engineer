@@ -22,6 +22,7 @@ _MEGA_MENU = [
             ("Posture & Risk Analysis", "/security-posture"),
             ("AI Copilot Triage", "/security-copilot"),
             ("Alerting & Remediation", "/security-alerting"),
+            ("AI & Identity Security", "/security-ai"),
             ("CI/CD & Cloud Integration", "/security-integrations"),
             ("Live Security Console", "/security-console"),
         ],

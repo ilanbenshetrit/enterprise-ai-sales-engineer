@@ -83,6 +83,36 @@ _CAPABILITIES = [
         ),
         "href": "/security-alerting",
     },
+    {
+        "n": "09",
+        "title": "AI Workload Security Scanner",
+        "desc": (
+            "Scans for LLM-specific risk &mdash; prompt injection, unsafe "
+            "model loading, unauthenticated vector databases, and "
+            "hardcoded AI API keys."
+        ),
+        "href": "/security-ai",
+    },
+    {
+        "n": "10",
+        "title": "Non-Human Identity (NHI) Scanner",
+        "desc": (
+            "Finds exposed machine credentials &mdash; cloud keys, SSH "
+            "keys, CI/CD tokens, and hardcoded connection strings &mdash; "
+            "the identities behind most breaches."
+        ),
+        "href": "/security-ai",
+    },
+    {
+        "n": "11",
+        "title": "MCP Server Security Scanner",
+        "desc": (
+            "Audits Model Context Protocol configurations used by AI "
+            "coding assistants for filesystem risk, exposed secrets, and "
+            "untrusted external endpoints."
+        ),
+        "href": "/security-ai",
+    },
 ]
 
 
