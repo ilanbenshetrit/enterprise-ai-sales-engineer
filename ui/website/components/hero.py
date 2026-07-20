@@ -121,8 +121,14 @@ def render_hero():
             text-align: center;
             width: calc(100% + 10rem);
             margin: 0 -5rem;
-            padding: 80px 5rem 70px;
-            background: #FFFCF5;
+            padding: 80px 5rem 150px;
+            background: linear-gradient(
+                180deg,
+                #FFFCF5 0%,
+                #FFFCF5 60%,
+                rgba(255,252,245,0.7) 78%,
+                rgba(255,252,245,0) 100%
+            );
         }}
 
         .hero-signature-wrap {{
