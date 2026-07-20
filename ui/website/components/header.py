@@ -168,41 +168,48 @@ def render_header():
         .kf-menu-item-wrap {{
             position: relative;
         }}
+        .kf-item, .kf-mega-link, .kf-mega-highlight-cta {{
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }}
         .kf-item {{
-            color: rgba(255,255,255,0.85);
             font-size: 15px;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 6px 2px;
             text-shadow:
-                1px 1px 0 rgba(192,132,252,0.35),
-                2px 2px 0 rgba(56,189,248,0.25),
-                3px 3px 6px rgba(0,0,0,0.25);
-            transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+                1px 1px 0 rgba(192,132,252,0.45),
+                2px 2px 0 rgba(56,189,248,0.35),
+                3px 3px 0 rgba(52,211,153,0.3),
+                4px 5px 8px rgba(0,0,0,0.3);
+            transition: transform 0.25s ease, text-shadow 0.25s ease, filter 0.25s ease;
         }}
         .kf-item-chevron {{
             font-size: 10px;
-            opacity: 0.6;
+            opacity: 0.75;
+            color: #38bdf8;
             transition: transform 0.25s ease;
         }}
         .kf-menu-item-wrap:hover .kf-item {{
-            color: white;
-            transform: scale(1.1) translateY(-2px);
+            transform: scale(1.12) translateY(-2px);
+            filter: brightness(1.25);
             text-shadow:
-                1px 1px 0 rgba(192,132,252,0.6),
-                2px 2px 0 rgba(56,189,248,0.5),
-                3px 3px 0 rgba(52,211,153,0.4),
-                4px 6px 10px rgba(0,0,0,0.35);
+                1px 1px 0 rgba(192,132,252,0.7),
+                2px 2px 0 rgba(56,189,248,0.6),
+                3px 3px 0 rgba(52,211,153,0.5),
+                5px 7px 12px rgba(0,0,0,0.4);
         }}
         .kf-menu-item-wrap:hover .kf-item-chevron {{
             transform: rotate(180deg);
             opacity: 1;
         }}
 
-        /* Mega panel */
+        /* Mega panel — no card/box, items float directly over the page */
 
         .kf-mega-panel {{
             position: absolute;
@@ -213,16 +220,12 @@ def render_header():
             display: grid;
             grid-template-columns: 1.15fr 1fr;
             gap: 24px;
-            background: rgba(15,23,42,0.98);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 18px;
-            padding: 26px;
+            padding: 22px 10px;
             margin-top: 14px;
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
             transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             z-index: 200;
         }}
         .kf-menu-item-wrap:hover .kf-mega-panel {{
@@ -234,40 +237,39 @@ def render_header():
         .kf-mega-links {{
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
         }}
         .kf-mega-link {{
-            color: rgba(255,255,255,0.82);
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
-            padding: 10px 12px;
-            border-radius: 10px;
-            transition: 0.2s;
+            font-weight: 700;
+            padding: 8px 4px;
+            text-shadow:
+                1px 1px 0 rgba(192,132,252,0.4),
+                2px 2px 0 rgba(56,189,248,0.3),
+                3px 3px 6px rgba(0,0,0,0.25);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            display: inline-block;
         }}
         .kf-mega-link:hover {{
-            background: rgba(255,255,255,0.06);
-            color: #38bdf8;
-            padding-left: 16px;
+            transform: translateX(4px) scale(1.05);
+            filter: brightness(1.3);
         }}
         .kf-mega-highlight {{
-            background: linear-gradient(
-                135deg,
-                rgba(192,132,252,0.14),
-                rgba(56,189,248,0.14),
-                rgba(52,211,153,0.14)
-            );
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 14px;
-            padding: 20px;
+            padding: 8px 4px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            border-left: 2px solid rgba(56,189,248,0.35);
+            padding-left: 20px;
         }}
         .kf-mega-highlight-label {{
-            color: #38bdf8;
+            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 11px;
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 10px;
@@ -279,13 +281,19 @@ def render_header():
             margin-bottom: 16px;
         }}
         .kf-mega-highlight-cta {{
-            color: white;
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 800;
             text-decoration: none;
+            text-shadow:
+                1px 1px 0 rgba(192,132,252,0.45),
+                2px 2px 0 rgba(56,189,248,0.35),
+                3px 3px 6px rgba(0,0,0,0.25);
+            transition: transform 0.2s ease, filter 0.2s ease;
+            display: inline-block;
         }}
         .kf-mega-highlight-cta:hover {{
-            color: #38bdf8;
+            transform: translateX(4px) scale(1.05);
+            filter: brightness(1.3);
         }}
         </style>
         <div class="kf-header">
