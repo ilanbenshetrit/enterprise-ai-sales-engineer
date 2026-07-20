@@ -147,13 +147,16 @@ def render_header():
             -webkit-text-fill-color: transparent;
         }}
         .kf-header {{
-            width: 100%;
+            width: calc(100% + 10rem);
+            margin: -3rem -5rem 0 -5rem;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 56px;
-            padding: 24px 0px;
-            margin-bottom: 60px;
+            padding: 22px 5rem;
+            background: #FFFCF5;
+            border-bottom: 1px solid rgba(15,23,42,0.08);
+            box-shadow: 0 2px 24px rgba(15,23,42,0.06);
             position: relative;
             z-index: 100;
         }}
@@ -275,7 +278,7 @@ def render_header():
             margin-bottom: 10px;
         }}
         .kf-mega-highlight-text {{
-            color: rgba(255,255,255,0.85);
+            color: rgba(15,23,42,0.72);
             font-size: 13px;
             line-height: 1.6;
             margin-bottom: 16px;

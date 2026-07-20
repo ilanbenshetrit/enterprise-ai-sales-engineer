@@ -35,7 +35,7 @@ HERO_NETWORK_SVG = """
         <circle class="kf-pulse-dot" style="animation-delay:1.2s" cx="520" cy="60" r="6"/>
         <circle class="kf-pulse-dot" style="animation-delay:1.8s" cx="740" cy="60" r="6"/>
     </g>
-    <g fill="#e2e8f0" opacity="0.55">
+    <g fill="#64748b" opacity="0.55">
         <circle class="kf-pulse-dot" style="animation-delay:0.3s" cx="160" cy="30" r="3.5"/>
         <circle class="kf-pulse-dot" style="animation-delay:0.9s" cx="160" cy="90" r="3.5"/>
         <circle class="kf-pulse-dot" style="animation-delay:1.5s" cx="400" cy="20" r="3.5"/>
@@ -119,7 +119,10 @@ def render_hero():
 
         .hero {{
             text-align: center;
-            padding: 80px 20px 20px;
+            width: calc(100% + 10rem);
+            margin: 0 -5rem;
+            padding: 80px 5rem 70px;
+            background: #FFFCF5;
         }}
 
         .hero-signature-wrap {{
@@ -155,7 +158,7 @@ def render_hero():
             margin: auto;
             font-size: 22px;
             line-height: 1.6;
-            color: rgba(255,255,255,0.85);
+            color: rgba(15,23,42,0.72);
         }}
 
         .hero-button {{
@@ -183,16 +186,17 @@ def render_hero():
             border-radius: 14px;
             font-size: 18px;
             font-weight: 600;
-            color: white;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.2);
+            color: #1A2E5C;
+            background: rgba(15,23,42,0.03);
+            border: 1px solid rgba(15,23,42,0.18);
             transition: 0.3s;
             text-decoration: none;
         }}
 
         .hero-button-outline:hover {{
             transform: translateY(-6px);
-            border-color: rgba(255,255,255,0.4);
+            border-color: rgba(15,23,42,0.35);
+            background: rgba(15,23,42,0.06);
         }}
 
         /* Rotating spotlight carousel — pure CSS, no JS/video */
@@ -203,8 +207,9 @@ def render_hero():
             min-height: 220px;
             margin: 50px auto 10px;
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(15,23,42,0.08);
+            background: #FFFFFF;
+            box-shadow: 0 20px 50px rgba(15,23,42,0.08);
             overflow: hidden;
         }}
 
@@ -213,7 +218,7 @@ def render_hero():
             inset: -60%;
             background: linear-gradient(120deg, #c084fc, #38bdf8, #34d399, #8b5cf6);
             background-size: 300% 300%;
-            opacity: 0.16;
+            opacity: 0.14;
             filter: blur(50px);
             animation: kfGradientDrift 14s ease infinite;
         }}
@@ -276,7 +281,7 @@ def render_hero():
         .kf-spotlight-title {{
             font-size: 26px;
             font-weight: 800;
-            color: white;
+            color: #1A2E5C;
             line-height: 1.3;
             margin-bottom: 12px;
         }}
@@ -284,7 +289,7 @@ def render_hero():
         .kf-spotlight-desc {{
             font-size: 15px;
             line-height: 1.65;
-            color: rgba(255,255,255,0.75);
+            color: rgba(15,23,42,0.65);
             max-width: 560px;
             margin: 0 auto 16px;
         }}
@@ -298,7 +303,7 @@ def render_hero():
 
         .kf-spotlight-slide:hover .kf-spotlight-cta {{
             transform: translateX(4px);
-            color: white;
+            color: #7C3AED;
         }}
 
         </style>
