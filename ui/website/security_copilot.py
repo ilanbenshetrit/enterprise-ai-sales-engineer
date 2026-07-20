@@ -5,7 +5,7 @@ Security Platform — Stage 03 Page: AI Copilot Triage
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stage_copilot import render_stage_copilot
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_copilot():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_stage_copilot()
 
     st.markdown(

@@ -5,7 +5,7 @@ Security Platform — Stage 11 Page: AI & Identity Security
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stage_ai_security import render_stage_ai_security
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_ai():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_stage_ai_security()
 
     st.markdown(

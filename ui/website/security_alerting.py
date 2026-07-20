@@ -5,7 +5,7 @@ Security Platform — Stage 04 Page: Alerting & Remediation
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stage_alerting import render_stage_alerting
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_alerting():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_stage_alerting()
 
     st.markdown(

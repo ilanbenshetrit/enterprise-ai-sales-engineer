@@ -5,7 +5,7 @@ SixStage Solutions Page
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.solutions_content import render_solutions_content
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_solutions():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_solutions_content()
 
     st.markdown(

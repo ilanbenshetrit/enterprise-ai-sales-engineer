@@ -5,7 +5,7 @@ Security Platform — Stage 02 Page: Posture & Risk Analysis
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stage_posture import render_stage_posture
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_posture():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_stage_posture()
 
     st.markdown(

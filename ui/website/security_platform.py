@@ -5,7 +5,7 @@ SixStage Security Platform Page
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.security_hero import render_security_hero
 from components.security_pipeline import render_security_pipeline
 from components.security_capabilities import render_security_capabilities
@@ -18,6 +18,7 @@ def render_security_platform():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_security_hero()
     render_security_pipeline()
     render_security_capabilities()

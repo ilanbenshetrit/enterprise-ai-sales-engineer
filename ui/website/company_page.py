@@ -5,7 +5,7 @@ SixStage Company Page
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stats import render_stats
 from components.about import render_about
 from components.vision import render_vision
@@ -18,6 +18,7 @@ def render_company():
     apply_theme()
 
     render_header()
+    render_header_fade()
 
     st.markdown(
         """

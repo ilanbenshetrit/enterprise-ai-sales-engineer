@@ -338,3 +338,32 @@ def render_header():
         """,
         unsafe_allow_html=True
     )
+
+
+def render_header_fade():
+    """Soft cream-to-transparent band, called right after the last piece
+    of cream content on every page (usually right after render_header()
+    itself) so the header never ends in a hard-cut line into the dark
+    page below. The homepage doesn't need this call directly — its hero
+    section provides the same fade at the end of its own cream area."""
+
+    st.markdown(
+        """
+        <style>
+        .kf-header-fade {
+            width: calc(100% + 10rem);
+            margin: 0 -5rem;
+            height: 130px;
+            background: linear-gradient(
+                180deg,
+                #FFFCF5 0%,
+                rgba(255,252,245,0.7) 35%,
+                rgba(255,252,245,0.25) 65%,
+                rgba(255,252,245,0) 100%
+            );
+        }
+        </style>
+        <div class="kf-header-fade"></div>
+        """,
+        unsafe_allow_html=True
+    )

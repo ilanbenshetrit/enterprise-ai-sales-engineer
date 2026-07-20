@@ -5,7 +5,7 @@ Security Platform — Live Console Page
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.security_console import render_security_console
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_console_page():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_security_console()
 
     st.markdown(

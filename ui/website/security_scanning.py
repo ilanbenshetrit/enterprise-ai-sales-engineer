@@ -5,7 +5,7 @@ Security Platform — Stage 01 Page: Continuous Scanning
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.stage_scanning import render_stage_scanning
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_scanning():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_stage_scanning()
 
     st.markdown(

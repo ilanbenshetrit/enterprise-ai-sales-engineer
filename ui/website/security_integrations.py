@@ -5,7 +5,7 @@ SixStage Security Platform — CI/CD & Cloud Integration Page
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.security_integrations_content import render_security_integrations_content
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_security_integrations():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_security_integrations_content()
 
     st.markdown(

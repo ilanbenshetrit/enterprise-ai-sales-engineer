@@ -5,7 +5,7 @@ Solutions — Healthcare & Life Sciences
 import streamlit as st
 
 from theme import apply_theme
-from components.header import render_header
+from components.header import render_header, render_header_fade
 from components.industry_detail import render_industry_detail
 from components.footer import render_footer
 
@@ -15,6 +15,7 @@ def render_solutions_healthcare():
     apply_theme()
 
     render_header()
+    render_header_fade()
     render_industry_detail("healthcare")
 
     st.markdown(
