@@ -141,16 +141,38 @@ def render_header():
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }}
-        .kf-header {{
+        .kf-announcement {{
             width: calc(100% + 10rem);
             margin: -3rem -5rem 0 -5rem;
+            background: linear-gradient(90deg, #f3e8ff, #dbeafe, #d1fae5);
+            text-align: center;
+            padding: 9px 5rem;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1A2E5C;
+            position: relative;
+            z-index: 101;
+        }}
+        .kf-announcement a {{
+            color: #7C3AED;
+            font-weight: 800;
+            text-decoration: none;
+            margin-left: 6px;
+        }}
+        .kf-announcement a:hover {{
+            text-decoration: underline;
+        }}
+        .kf-header {{
+            width: calc(100% + 10rem);
+            margin: 0 -5rem 0 -5rem;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 34px;
             padding: 22px 5rem;
             background: #FFFCF5;
-            position: relative;
+            position: sticky;
+            top: 0;
             z-index: 100;
         }}
         .kf-header-logo {{
@@ -282,6 +304,10 @@ def render_header():
             box-shadow: 0 12px 24px rgba(124,58,237,0.25);
         }}
         </style>
+        <div class="kf-announcement">
+            Stage 12 is live — self-serve tenants with a real API key, today.
+            <a href="/get-started" target="_self">Create your workspace &rarr;</a>
+        </div>
         <div class="kf-header">
             <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px")}</div>
             <div class="kf-menu">
