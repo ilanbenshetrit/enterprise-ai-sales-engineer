@@ -58,6 +58,7 @@ from security_posture import render_security_posture
 from security_copilot import render_security_copilot
 from security_alerting import render_security_alerting
 from security_ai import render_security_ai
+from how_it_works import render_how_it_works_page
 from get_started import render_get_started_page
 from security_console import render_security_console_page
 
@@ -86,6 +87,7 @@ pages = [
     st.Page(render_security_copilot, title="AI Copilot Triage", url_path="security-copilot"),
     st.Page(render_security_alerting, title="Alerting & Remediation", url_path="security-alerting"),
     st.Page(render_security_ai, title="AI & Identity Security", url_path="security-ai"),
+    st.Page(render_how_it_works_page, title="How It Works", url_path="how-it-works"),
     st.Page(render_get_started_page, title="Get Started", url_path="get-started"),
     st.Page(render_security_console_page, title="Live Security Console", url_path="security-console"),
 ]

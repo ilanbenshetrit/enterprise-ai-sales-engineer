@@ -24,7 +24,6 @@ _MEGA_MENU = [
             ("Alerting & Remediation", "/security-alerting"),
             ("AI & Identity Security", "/security-ai"),
             ("CI/CD & Cloud Integration", "/security-integrations"),
-            ("Get Started — Create a Workspace", "/get-started"),
             ("Live Security Console", "/security-console"),
         ],
         "highlight_label": "Our Flagship Platform",
@@ -34,6 +33,24 @@ _MEGA_MENU = [
         ),
         "highlight_href": "/security-console",
         "highlight_cta": "Open the Live Console",
+    },
+    {
+        "label": "Become a Customer",
+        "href": "/how-it-works",
+        "links": [
+            ("How It Works — Hybrid Model", "/how-it-works"),
+            ("Get Started — Create Your Workspace", "/get-started"),
+            ("Access Your Live Dashboard", "/security-console"),
+            ("Talk to Sales", "/contact"),
+        ],
+        "highlight_label": "Cloud + Hybrid Deployment",
+        "highlight_text": (
+            "Register in one form, get a live API key instantly, and "
+            "connect your own infrastructure. Your code and secrets "
+            "never leave your environment."
+        ),
+        "highlight_href": "/get-started",
+        "highlight_cta": "Create Your Workspace",
     },
     {
         "label": "AI Sales Engineer",
@@ -270,29 +287,12 @@ def render_header():
         .kf-mega-highlight-cta:hover {{
             color: #38bdf8;
         }}
-        .kf-header-cta {{
-            flex-shrink: 0;
-            display: inline-block;
-            padding: 10px 22px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            color: white;
-            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
-            text-decoration: none;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }}
-        .kf-header-cta:hover {{
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(56,189,248,0.35);
-        }}
         </style>
         <div class="kf-header">
             <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px")}</div>
             <div class="kf-menu">
                 {_render_mega_items()}
             </div>
-            <a class="kf-header-cta" href="/get-started" target="_self">Get Started</a>
         </div>
         """,
         unsafe_allow_html=True
