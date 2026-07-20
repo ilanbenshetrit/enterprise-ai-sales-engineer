@@ -229,25 +229,30 @@ def render_header():
             position: absolute;
             top: 100%;
             left: 50%;
-            transform: translateX(-50%) translateY(8px);
+            transform: translateX(-50%);
             display: grid;
             gap: 24px;
             padding: 26px 24px;
-            margin-top: 14px;
+            margin-top: 0;
+            /* invisible bridge: no gap between the trigger and the panel,
+               so the pointer never leaves hoverable territory on the way
+               down and the panel doesn't close before you reach it */
+            border-top: 14px solid transparent;
+            background-clip: padding-box;
             background: #FFFFFF;
             border-radius: 16px;
             box-shadow: 0 24px 60px rgba(15,23,42,0.22), 0 4px 16px rgba(15,23,42,0.1);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+            transition: opacity 0.15s ease, visibility 0.15s;
             z-index: 200;
         }}
-        .kf-menu-item-wrap:hover .kf-mega-panel {{
+        .kf-menu-item-wrap:hover .kf-mega-panel,
+        .kf-mega-panel:hover {{
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
         }}
         .kf-mega-links {{
             display: flex;
