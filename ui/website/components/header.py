@@ -1,10 +1,11 @@
 """
-SixStage Corporate Header — Full Mega-Menu Navigation
+SixStage Corporate Header — Datadog-Style Navigation
 
-Structured like a large enterprise site's nav (categories that reveal
-a wide panel of sub-links plus a highlight/CTA panel on hover),
-scaled to SixStage's actual page count rather than padded out with
-filler links.
+Mirrors datadoghq.com's exact top-level taxonomy: Product, Customers,
+Pricing, Solutions, About, Blog, Docs, Login, then a Get Started button.
+Product/Solutions/About open a hover panel (mega or simple dropdown);
+Customers/Pricing/Blog/Docs/Login are plain links, matching Datadog's
+own mix of dropdown vs. direct nav items.
 """
 
 import streamlit as st
@@ -14,7 +15,7 @@ from components.logo import kf_logo_lockup
 
 _MEGA_MENU = [
     {
-        "label": "Security Platform",
+        "label": "Product",
         "href": "/security",
         "links": [
             ("Overview", "/security"),
@@ -24,6 +25,7 @@ _MEGA_MENU = [
             ("Alerting & Remediation", "/security-alerting"),
             ("AI & Identity Security", "/security-ai"),
             ("CI/CD & Cloud Integration", "/security-integrations"),
+            ("How It Works — Hybrid Model", "/how-it-works"),
             ("Live Security Console", "/security-console"),
         ],
         "highlight_label": "Our Flagship Platform",
@@ -35,44 +37,13 @@ _MEGA_MENU = [
         "highlight_cta": "Open the Live Console",
     },
     {
-        "label": "Become a Customer",
-        "href": "/how-it-works",
-        "links": [
-            ("How It Works — Hybrid Model", "/how-it-works"),
-            ("Get Started — Create Your Workspace", "/get-started"),
-            ("Access Your Live Dashboard", "/security-console"),
-            ("Talk to Sales", "/contact"),
-        ],
-        "highlight_label": "Cloud + Hybrid Deployment",
-        "highlight_text": (
-            "Register in one form, get a live API key instantly, and "
-            "connect your own infrastructure. Your code and secrets "
-            "never leave your environment."
-        ),
-        "highlight_href": "/get-started",
-        "highlight_cta": "Create Your Workspace",
-    },
-    {
-        "label": "AI Sales Engineer",
-        "href": "/platform",
-        "links": [
-            ("Overview", "/platform"),
-            ("Live Platform Demo", "/demo"),
-        ],
-        "highlight_label": "One AI Engine",
-        "highlight_text": (
-            "Six stages of enterprise technical sales, from opportunity "
-            "intelligence to a delivered solution package."
-        ),
-        "highlight_href": "/platform",
-        "highlight_cta": "See How It Works",
-    },
-    {
         "label": "Solutions",
         "href": "/solutions",
         "links": [
             ("Solutions Overview", "/solutions"),
             ("Technology", "/technology"),
+            ("AI Sales Engineer", "/platform"),
+            ("Live Platform Demo", "/demo"),
         ],
         "highlight_label": "Built On",
         "highlight_text": (
@@ -83,20 +54,21 @@ _MEGA_MENU = [
         "highlight_cta": "See the Technology",
     },
     {
-        "label": "Company",
+        "label": "About",
         "href": "/company",
         "links": [
             ("About SixStage", "/company"),
             ("Contact Us", "/contact"),
         ],
-        "highlight_label": "Our Story",
-        "highlight_text": (
-            "Built by engineers who got tired of manual work — how "
-            "SixStage started and where it's headed."
-        ),
-        "highlight_href": "/company",
-        "highlight_cta": "Learn Our Story",
     },
+]
+
+_SIMPLE_LINKS = [
+    ("Customers", "/customers"),
+    ("Pricing", "/pricing"),
+    ("Blog", "/blog"),
+    ("Docs", "/docs"),
+    ("Login", "/security-console"),
 ]
 
 
@@ -110,13 +82,10 @@ def _render_mega_items() -> str:
             for label, href in cat["links"]
         )
 
-        items_html += f"""
-        <div class="kf-menu-item-wrap">
-            <a class="kf-item" href="{cat['href']}" target="_self">
-                {cat['label']}
-                <span class="kf-item-chevron">&#9662;</span>
-            </a>
-            <div class="kf-mega-panel">
+        has_highlight = "highlight_label" in cat
+
+        if has_highlight:
+            panel_inner = f"""
                 <div class="kf-mega-links">
                     {links_html}
                 </div>
@@ -127,11 +96,37 @@ def _render_mega_items() -> str:
                     {cat['highlight_cta']} &rarr;
                     </a>
                 </div>
+            """
+            panel_style = "grid-template-columns: 1.15fr 1fr; width: 560px;"
+        else:
+            panel_inner = f"""
+                <div class="kf-mega-links">
+                    {links_html}
+                </div>
+            """
+            panel_style = "grid-template-columns: 1fr; width: 220px;"
+
+        items_html += f"""
+        <div class="kf-menu-item-wrap">
+            <a class="kf-item" href="{cat['href']}" target="_self">
+                {cat['label']}
+                <span class="kf-item-chevron">&#9662;</span>
+            </a>
+            <div class="kf-mega-panel" style="{panel_style}">
+                {panel_inner}
             </div>
         </div>
         """
 
     return items_html
+
+
+def _render_simple_links() -> str:
+
+    return "".join(
+        f'<a class="kf-item kf-item-simple" href="{href}" target="_self">{label}</a>'
+        for label, href in _SIMPLE_LINKS
+    )
 
 
 def render_header():
@@ -152,11 +147,9 @@ def render_header():
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 56px;
+            gap: 34px;
             padding: 22px 5rem;
             background: #FFFCF5;
-            border-bottom: 1px solid rgba(15,23,42,0.08);
-            box-shadow: 0 2px 24px rgba(15,23,42,0.06);
             position: relative;
             z-index: 100;
         }}
@@ -165,63 +158,46 @@ def render_header():
         }}
         .kf-menu {{
             display: flex;
-            gap: 38px;
+            gap: 30px;
             align-items: center;
         }}
         .kf-menu-item-wrap {{
             position: relative;
         }}
-        .kf-item, .kf-mega-link, .kf-mega-highlight-cta {{
-            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }}
         .kf-item {{
+            color: #0A1628;
             font-size: 15px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 6px 2px;
-            text-shadow:
-                1px 1px 0 rgba(192,132,252,0.45),
-                2px 2px 0 rgba(56,189,248,0.35),
-                3px 3px 0 rgba(52,211,153,0.3),
-                4px 5px 8px rgba(0,0,0,0.3);
-            transition: transform 0.25s ease, text-shadow 0.25s ease, filter 0.25s ease;
+            transition: color 0.2s ease;
         }}
         .kf-item-chevron {{
             font-size: 10px;
-            opacity: 0.75;
-            color: #38bdf8;
-            transition: transform 0.25s ease;
+            opacity: 0.6;
+            color: #7C3AED;
+            transition: transform 0.2s ease;
         }}
-        .kf-menu-item-wrap:hover .kf-item {{
-            transform: scale(1.12) translateY(-2px);
-            filter: brightness(1.25);
-            text-shadow:
-                1px 1px 0 rgba(192,132,252,0.7),
-                2px 2px 0 rgba(56,189,248,0.6),
-                3px 3px 0 rgba(52,211,153,0.5),
-                5px 7px 12px rgba(0,0,0,0.4);
+        .kf-menu-item-wrap:hover .kf-item,
+        .kf-item-simple:hover {{
+            color: #7C3AED;
         }}
         .kf-menu-item-wrap:hover .kf-item-chevron {{
             transform: rotate(180deg);
             opacity: 1;
         }}
 
-        /* Mega panel — no card/box, items float directly over the page */
+        /* Mega panel — no card/box, plain text floats directly over the page */
 
         .kf-mega-panel {{
             position: absolute;
             top: 100%;
             left: 50%;
             transform: translateX(-50%) translateY(8px);
-            width: 560px;
             display: grid;
-            grid-template-columns: 1.15fr 1fr;
             gap: 24px;
             padding: 22px 10px;
             margin-top: 14px;
@@ -243,34 +219,28 @@ def render_header():
             gap: 4px;
         }}
         .kf-mega-link {{
+            color: #0A1628;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
             padding: 8px 4px;
-            text-shadow:
-                1px 1px 0 rgba(192,132,252,0.4),
-                2px 2px 0 rgba(56,189,248,0.3),
-                3px 3px 6px rgba(0,0,0,0.25);
-            transition: transform 0.2s ease, filter 0.2s ease;
+            transition: color 0.2s ease, transform 0.2s ease;
             display: inline-block;
         }}
         .kf-mega-link:hover {{
-            transform: translateX(4px) scale(1.05);
-            filter: brightness(1.3);
+            color: #7C3AED;
+            transform: translateX(4px);
         }}
         .kf-mega-highlight {{
             padding: 8px 4px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            border-left: 2px solid rgba(56,189,248,0.35);
+            border-left: 2px solid rgba(124,58,237,0.3);
             padding-left: 20px;
         }}
         .kf-mega-highlight-label {{
-            background: linear-gradient(90deg, #c084fc, #38bdf8, #34d399);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #7C3AED;
             font-size: 11px;
             font-weight: 800;
             letter-spacing: 2px;
@@ -278,32 +248,47 @@ def render_header():
             margin-bottom: 10px;
         }}
         .kf-mega-highlight-text {{
-            color: rgba(15,23,42,0.72);
+            color: rgba(15,23,42,0.7);
             font-size: 13px;
             line-height: 1.6;
             margin-bottom: 16px;
         }}
         .kf-mega-highlight-cta {{
+            color: #0A1628;
             font-size: 13px;
             font-weight: 800;
             text-decoration: none;
-            text-shadow:
-                1px 1px 0 rgba(192,132,252,0.45),
-                2px 2px 0 rgba(56,189,248,0.35),
-                3px 3px 6px rgba(0,0,0,0.25);
-            transition: transform 0.2s ease, filter 0.2s ease;
+            transition: color 0.2s ease, transform 0.2s ease;
             display: inline-block;
         }}
         .kf-mega-highlight-cta:hover {{
-            transform: translateX(4px) scale(1.05);
-            filter: brightness(1.3);
+            color: #7C3AED;
+            transform: translateX(4px);
+        }}
+        .kf-header-cta {{
+            flex-shrink: 0;
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }}
+        .kf-header-cta:hover {{
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(124,58,237,0.25);
         }}
         </style>
         <div class="kf-header">
             <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px")}</div>
             <div class="kf-menu">
                 {_render_mega_items()}
+                {_render_simple_links()}
             </div>
+            <a class="kf-header-cta" href="/get-started" target="_self">Get Started</a>
         </div>
         """,
         unsafe_allow_html=True

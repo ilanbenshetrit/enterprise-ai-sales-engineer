@@ -60,6 +60,10 @@ from security_alerting import render_security_alerting
 from security_ai import render_security_ai
 from how_it_works import render_how_it_works_page
 from get_started import render_get_started_page
+from customers_page import render_customers
+from pricing_page import render_pricing
+from docs_page import render_docs
+from blog_page import render_blog
 from security_console import render_security_console_page
 
 from app.ui.dashboard import render_dashboard
@@ -89,6 +93,10 @@ pages = [
     st.Page(render_security_ai, title="AI & Identity Security", url_path="security-ai"),
     st.Page(render_how_it_works_page, title="How It Works", url_path="how-it-works"),
     st.Page(render_get_started_page, title="Get Started", url_path="get-started"),
+    st.Page(render_customers, title="Customers", url_path="customers"),
+    st.Page(render_pricing, title="Pricing", url_path="pricing"),
+    st.Page(render_docs, title="Docs", url_path="docs"),
+    st.Page(render_blog, title="Blog", url_path="blog"),
     st.Page(render_security_console_page, title="Live Security Console", url_path="security-console"),
 ]
 
