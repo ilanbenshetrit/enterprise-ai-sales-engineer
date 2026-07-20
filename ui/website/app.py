@@ -64,6 +64,12 @@ from customers_page import render_customers
 from pricing_page import render_pricing
 from docs_page import render_docs
 from blog_page import render_blog
+from solutions_financial import render_solutions_financial
+from solutions_healthcare import render_solutions_healthcare
+from solutions_manufacturing import render_solutions_manufacturing
+from solutions_public_sector import render_solutions_public_sector
+from solutions_insurance import render_solutions_insurance
+from solutions_technology import render_solutions_technology
 from security_console import render_security_console_page
 
 from app.ui.dashboard import render_dashboard
@@ -97,6 +103,12 @@ pages = [
     st.Page(render_pricing, title="Pricing", url_path="pricing"),
     st.Page(render_docs, title="Docs", url_path="docs"),
     st.Page(render_blog, title="Blog", url_path="blog"),
+    st.Page(render_solutions_financial, title="Solutions — Financial Services", url_path="solutions-financial-services"),
+    st.Page(render_solutions_healthcare, title="Solutions — Healthcare", url_path="solutions-healthcare"),
+    st.Page(render_solutions_manufacturing, title="Solutions — Manufacturing", url_path="solutions-manufacturing"),
+    st.Page(render_solutions_public_sector, title="Solutions — Public Sector", url_path="solutions-public-sector"),
+    st.Page(render_solutions_insurance, title="Solutions — Insurance", url_path="solutions-insurance"),
+    st.Page(render_solutions_technology, title="Solutions — Technology", url_path="solutions-technology"),
     st.Page(render_security_console_page, title="Live Security Console", url_path="security-console"),
 ]
 

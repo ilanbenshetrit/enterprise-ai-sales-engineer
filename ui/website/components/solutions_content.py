@@ -4,76 +4,21 @@ SixStage Solutions Page Content
 
 import streamlit as st
 
-
-_SOLUTIONS = [
-    {
-        "n": "01",
-        "title": "Financial Services",
-        "desc": (
-            "Automate KYC-heavy discovery, architect compliant hybrid-cloud "
-            "solutions, and generate audit-ready proposals for regulated "
-            "banking and capital markets deals."
-        ),
-    },
-    {
-        "n": "02",
-        "title": "Healthcare &amp; Life Sciences",
-        "desc": (
-            "Navigate HIPAA and data-residency constraints automatically "
-            "while designing architectures for clinical, research, and "
-            "patient-data workloads."
-        ),
-    },
-    {
-        "n": "03",
-        "title": "Manufacturing &amp; Supply Chain",
-        "desc": (
-            "Plan automation projects across OT and IT boundaries &mdash; "
-            "from plant-floor integration to end-to-end supply chain "
-            "visibility."
-        ),
-    },
-    {
-        "n": "04",
-        "title": "Public Sector",
-        "desc": (
-            "Meet procurement and security accreditation requirements from "
-            "the first discovery call, with architecture recommendations "
-            "built for government compliance frameworks."
-        ),
-    },
-    {
-        "n": "05",
-        "title": "Insurance",
-        "desc": (
-            "Accelerate claims and underwriting automation opportunities "
-            "with POC plans scoped around measurable loss-ratio and "
-            "cycle-time outcomes."
-        ),
-    },
-    {
-        "n": "06",
-        "title": "Technology &amp; SaaS",
-        "desc": (
-            "Scope integrations and multi-tenant architecture for platform "
-            "and infrastructure deals, from proof-of-concept to production "
-            "rollout."
-        ),
-    },
-]
+from components.industry_data import INDUSTRIES
 
 
 def render_solutions_content():
 
     cards_html = "".join(
         f"""
-        <div class="kf-card">
-            <div class="kf-card-number">{s['n']}</div>
-            <div class="kf-card-title">{s['title']}</div>
-            <div class="kf-card-desc">{s['desc']}</div>
-        </div>
+        <a class="kf-stage-card" href="{ind['href']}" target="_self">
+            <div class="kf-card-number">{ind['n']}</div>
+            <div class="kf-card-title">{ind['title']}</div>
+            <div class="kf-card-desc">{ind['desc']}</div>
+            <div class="kf-stage-card-link">Explore this industry &rarr;</div>
+        </a>
         """
-        for s in _SOLUTIONS
+        for ind in INDUSTRIES.values()
     )
 
     st.markdown(
