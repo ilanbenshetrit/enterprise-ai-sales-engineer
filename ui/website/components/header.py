@@ -68,7 +68,7 @@ _SIMPLE_LINKS = [
     ("Pricing", "/pricing"),
     ("Blog", "/blog"),
     ("Docs", "/docs"),
-    ("Login", "/security-console"),
+    ("Security Dashboard", "/security-console"),
 ]
 
 
@@ -124,7 +124,7 @@ def _render_mega_items() -> str:
 def _render_simple_links() -> str:
 
     return "".join(
-        f'<a class="kf-item kf-item-simple" href="{href}" target="_self">{label}</a>'
+        f'<a class="kf-item kf-item-simple{" kf-item-dashboard" if label == "Security Dashboard" else ""}" href="{href}" target="_self">{label}</a>'
         for label, href in _SIMPLE_LINKS
     )
 
@@ -215,6 +215,16 @@ def render_header():
         .kf-menu-item-wrap:hover .kf-item,
         .kf-item-simple:hover {{
             color: #7C3AED;
+        }}
+        .kf-item-dashboard {{
+            color: #7C3AED !important;
+            background: rgba(124,58,237,0.08);
+            border: 1px solid rgba(124,58,237,0.25) !important;
+            border-radius: 8px;
+            padding: 7px 14px !important;
+        }}
+        .kf-item-dashboard:hover {{
+            background: rgba(124,58,237,0.15);
         }}
         .kf-menu-item-wrap:hover .kf-item-chevron {{
             transform: rotate(180deg);
