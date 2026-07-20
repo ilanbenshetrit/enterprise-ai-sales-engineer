@@ -106,8 +106,9 @@ def _render_plan_cards():
             {cards_html}
         </div>
         <div style="text-align:center; margin-top:18px; font-size:13px; color:rgba(255,255,255,0.55);">
-            Every new workspace starts on Starter &mdash; plan upgrades and
-            billing are being wired up next. Need Enterprise &mdash; unlimited
+            Every new workspace starts on Starter. Upgrade to Professional
+            anytime from your dashboard's Billing tab &mdash; real checkout,
+            powered by Lemon Squeezy. Need Enterprise &mdash; unlimited
             environments, SSO, SLA?
             <a href="/contact" target="_self" style="color:#38bdf8; font-weight:600;">Talk to us &rarr;</a>
         </div>
@@ -182,7 +183,9 @@ def render_get_started():
                 </div>
                 <div style="max-width:620px; margin:10px auto 0; font-size:13px; color:rgba(255,255,255,0.6); text-align:center;">
                     Use the email and password you just set &mdash; the Live
-                    Security Console signs you in directly.
+                    Security Console signs you in directly. Want Professional
+                    right away? Open <b>Billing</b> in the sidebar once
+                    you're signed in &mdash; checkout is real.
                 </div>
                 """,
                 unsafe_allow_html=True
@@ -263,8 +266,8 @@ def render_get_started():
         st.markdown(
             """
             <div style="text-align:center; margin-top:14px; font-size:12px; color:rgba(255,255,255,0.5);">
-                No credit card required today &mdash; billing is being wired up next.
-                You're securing early access to your workspace now.
+                No credit card required to sign up. Upgrade to Professional
+                anytime after &mdash; billing is live, powered by Lemon Squeezy.
             </div>
             """,
             unsafe_allow_html=True

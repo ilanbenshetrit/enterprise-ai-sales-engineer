@@ -88,7 +88,11 @@ def render_pricing_content():
         </div>
         <div class="kf-cta">
             <div class="kf-cta-title">Ready to Create Your Workspace?</div>
-            <div class="kf-cta-desc">Register in one form and get a live API key instantly.</div>
+            <div class="kf-cta-desc">
+                Register in one form to get started free on Starter, then
+                upgrade to Professional anytime from your dashboard's
+                Billing tab &mdash; real checkout, powered by Lemon Squeezy.
+            </div>
             <a class="kf-cta-button" href="/get-started" target="_self">Get Started</a>
         </div>
         """,
