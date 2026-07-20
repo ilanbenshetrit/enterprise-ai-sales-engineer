@@ -141,6 +141,14 @@ def render_header():
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }}
+        .kf-logo-dark {{
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(90deg, #9333ea, #0284c7, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 1px 1px rgba(15,23,42,0.12);
+        }}
         .kf-announcement {{
             width: calc(100% + 10rem);
             margin: -3rem -5rem 0 -5rem;
@@ -190,7 +198,8 @@ def render_header():
             color: #0A1628;
             font-size: 15px;
             font-weight: 600;
-            text-decoration: none;
+            text-decoration: none !important;
+            border-bottom: none !important;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -212,7 +221,9 @@ def render_header():
             opacity: 1;
         }}
 
-        /* Mega panel — no card/box, plain text floats directly over the page */
+        /* Mega panel — solid white card so it stays readable no matter
+           what scrolls behind it (the page below the sticky header is
+           dark), and reads as floating above the page like Datadog's */
 
         .kf-mega-panel {{
             position: absolute;
@@ -221,8 +232,11 @@ def render_header():
             transform: translateX(-50%) translateY(8px);
             display: grid;
             gap: 24px;
-            padding: 22px 10px;
+            padding: 26px 24px;
             margin-top: 14px;
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 24px 60px rgba(15,23,42,0.22), 0 4px 16px rgba(15,23,42,0.1);
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
@@ -242,7 +256,7 @@ def render_header():
         }}
         .kf-mega-link {{
             color: #0A1628;
-            text-decoration: none;
+            text-decoration: none !important;
             font-size: 14px;
             font-weight: 600;
             padding: 8px 4px;
@@ -279,7 +293,7 @@ def render_header():
             color: #0A1628;
             font-size: 13px;
             font-weight: 800;
-            text-decoration: none;
+            text-decoration: none !important;
             transition: color 0.2s ease, transform 0.2s ease;
             display: inline-block;
         }}
@@ -296,7 +310,7 @@ def render_header():
             font-weight: 700;
             color: white;
             background: linear-gradient(90deg, #8b5cf6, #38bdf8, #34d399);
-            text-decoration: none;
+            text-decoration: none !important;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }}
         .kf-header-cta:hover {{
@@ -309,7 +323,7 @@ def render_header():
             <a href="/get-started" target="_self">Create your workspace &rarr;</a>
         </div>
         <div class="kf-header">
-            <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px")}</div>
+            <div class="kf-header-logo">{kf_logo_lockup(size=84, wordmark_size="52px", wordmark_class="kf-logo-dark", on_light=True)}</div>
             <div class="kf-menu">
                 {_render_mega_items()}
                 {_render_simple_links()}

@@ -149,14 +149,26 @@ _SPHERE_DOTS = """
 """
 
 
-def kf_logo_svg(size: int = 56) -> str:
-    """The SixStage dot-sphere globe mark, lit up with a soft glow."""
+def kf_logo_svg(size: int = 56, on_light: bool = False) -> str:
+    """The SixStage dot-sphere globe mark.
 
-    glow = (
-        "drop-shadow(0 0 8px rgba(56,189,248,0.65)) "
-        "drop-shadow(0 0 16px rgba(192,132,252,0.45)) "
-        "drop-shadow(0 0 24px rgba(52,211,153,0.3))"
-    )
+    On dark backgrounds the sphere is lit up with a soft colored glow.
+    On light backgrounds that same glow disappears (blooms only read
+    against a dark surround), so instead the dots are darkened and
+    saturated and a crisp, dark drop-shadow is used for definition.
+    """
+
+    if on_light:
+        glow = (
+            "saturate(1.7) brightness(0.68) contrast(1.2) "
+            "drop-shadow(0 1px 3px rgba(15,23,42,0.35))"
+        )
+    else:
+        glow = (
+            "drop-shadow(0 0 8px rgba(56,189,248,0.65)) "
+            "drop-shadow(0 0 16px rgba(192,132,252,0.45)) "
+            "drop-shadow(0 0 24px rgba(52,211,153,0.3))"
+        )
 
     return f"""
     <svg width="{size}" height="{size}" viewBox="0 0 200 200"
@@ -175,7 +187,8 @@ def kf_logo_svg(size: int = 56) -> str:
 
 
 def kf_logo_lockup(size: int = 56, wordmark_class: str = "kf-logo",
-                    wordmark_size: str = "34px", show_tagline: bool = True) -> str:
+                    wordmark_size: str = "34px", show_tagline: bool = True,
+                    on_light: bool = False) -> str:
     """Icon + wordmark (+ optional tagline), wrapped in a link home."""
 
     tagline_html = ""
@@ -187,7 +200,7 @@ def kf_logo_lockup(size: int = 56, wordmark_class: str = "kf-logo",
     return f"""
     <a href="/" target="_self" style="text-decoration:none;">
         <div style="display:flex; align-items:center; gap:14px; cursor:pointer;">
-            {kf_logo_svg(size)}
+            {kf_logo_svg(size, on_light=on_light)}
             <div style="display:flex; flex-direction:column; gap:2px;">
                 <span class="{wordmark_class}" style="font-size:{wordmark_size};">sixstage</span>
                 {tagline_html}
